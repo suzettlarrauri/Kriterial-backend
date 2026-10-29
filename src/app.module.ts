@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AssessmentsModule } from './assessments/assessments.module.js';
 import { AuthModule } from './auth/auth.module.js';
 import { AppConfigModule } from './config/app-config.js';
+import { EvidenceModule } from './evidence/evidence.module.js';
 import { HealthModule } from './health/health.module.js';
 import { InstrumentsModule } from './instruments/instruments.module.js';
 import { LoggingModule } from './logging/logging.module.js';
@@ -24,6 +25,7 @@ import { StorageModule } from './storage/storage.module.js';
     InstrumentsModule,
     ParticipantsModule,
     AssessmentsModule,
+    EvidenceModule,
   ],
 })
 export class AppModule {}

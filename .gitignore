@@ -18,6 +18,8 @@ secrets.php
 
 # audios y transcripciones locales (datos sensibles); solo la raíz, no src/storage/
 /storage/
+# respuestas reales usadas como casos de prueba: pendiente de consentimiento (D1)
+test/fixtures/private/
 
 # logs y SO
 *.log

@@ -28,6 +28,7 @@
     "db:seed": "npm run scripts:build && node .scripts-dist/scripts/seed.js",
     "instruments:import": "npm run scripts:build && node .scripts-dist/scripts/import-legacy-instrument.js",
     "prompts:hash": "npm run scripts:build && node .scripts-dist/scripts/prompts-hash.js",
+    "fixtures:canonical": "npm run scripts:build && node .scripts-dist/scripts/import-canonical-case.js",
     "dev:token": "npm run scripts:build && node .scripts-dist/scripts/dev-token.js",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "postinstall": "prisma generate",

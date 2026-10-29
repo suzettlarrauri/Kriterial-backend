@@ -3,7 +3,7 @@
 API y worker del pipeline de diagnóstico de Kriterial (NestJS 12 + PostgreSQL 16 + BullMQ).
 Diseño completo: [`../PLAN_ARQUITECTURA_BLOQUE_1.md`](../PLAN_ARQUITECTURA_BLOQUE_1.md).
 
-**Estado:** fases **F1 (fundaciones)** y **F2 (captura)** completadas. El pipeline LLM (F3–F6) aún no existe.
+**Estado:** fases **F1 (fundaciones)**, **F2 (captura)** y **F3 (evidencia)** completadas. El pipeline LLM (F4–F6) aún no existe.
 
 ## Requisitos
 
@@ -89,8 +89,24 @@ Notas:
 - Cada participante solo ve y modifica sus evaluaciones; ajenas responden `404`.
 - Los audios se transcriben en el worker (trabajo `transcription.turn`). El proveedor real aún no existe:
   `TRANSCRIPTION_PROVIDER=fake` y el arranque falla si se usa en producción.
+- El envío queda bloqueado mientras haya audios pendientes o fallidos (`409` con `transcriptsFailed`):
+  la persona debe volver a grabar esa pregunta. Pendiente de confirmación de la clienta.
 - Los audios se guardan en `STORAGE_DIR` (por defecto `storage/`, ignorado por git).
 - `LLM_MODE=replay` (por defecto) no llama a la API de Anthropic. `live` exige `ANTHROPIC_API_KEY`.
+
+## Evidencia (F3)
+
+`EvidenceService.buildForAssessment(id)` construye el `PATTERN_INPUT` (contrato `pattern-input/1`) de una
+evaluación enviada: registro de evidencia con `evidence_id` estables, grupos de independencia, señales por
+faceta, datos no disponibles, banderas de calidad y menciones sensibles (solo anotadas). Es determinista y
+no usa IA. Aún no se persiste: la persistencia llega con los `pipeline_runs` de F4.
+
+Caso de referencia (datos privados, fuera de git hasta tener consentimiento, D1):
+
+```bash
+npm run fixtures:canonical   # convierte old-sistem/Pasted markdown(2).md a test/fixtures/private/
+npm test                     # la prueba del caso canónico se omite si el fixture no existe
+```
 
 ## Reglas que el código hace cumplir
 

@@ -9,6 +9,7 @@ import { configureApp } from '../src/app.setup.js';
 import { TokenService } from '../src/auth/token.service.js';
 import { InstrumentSeeder } from '../src/instruments/instrument-seeder.service.js';
 import { PrismaService } from '../src/prisma/prisma.service.js';
+import { EvidenceService } from '../src/evidence/evidence.service.js';
 import { TranscriptionModule } from '../src/transcription/transcription.module.js';
 import { TranscriptionService } from '../src/transcription/transcription.service.js';
 
@@ -184,20 +185,49 @@ describe('Kriterial F2 · captura de la evaluación B1 (e2e)', () => {
     expect(res.body.transcriptsPending).toBe(9);
   });
 
-  it('transcribe los turnos pendientes (lo hace el worker en producción) y permite el envío', async () => {
+  it('bloquea el envío mientras un audio no se pudo transcribir, y lo desbloquea al volver a grabarlo', async () => {
     const transcription = app.get(TranscriptionService, { strict: false });
     const pending = await prisma.audioTurn.findMany({ where: { transcriptStatus: 'pending' } });
-    for (const turn of pending) await transcription.transcribeTurn(turn.id);
+    const failing = pending.find((t) => t.promptText === byType('AUDIO_ADAPTIVE')[1]!.text)!;
+    for (const turn of pending) {
+      if (turn.id !== failing.id) await transcription.transcribeTurn(turn.id);
+    }
+    // Simula el agotamiento de reintentos del proveedor para ese audio.
+    await prisma.audioTurn.update({ where: { id: failing.id }, data: { transcriptStatus: 'failed' } });
 
+    const blocked = await api().post(`/v1/assessments/${assessmentId}/submit`).set(as(owner)).expect(409);
+    expect(blocked.body.transcriptsFailed).toEqual([{ questionCode: byType('AUDIO_ADAPTIVE')[1]!.code, turnIndex: 0 }]);
     const status = await api().get(`/v1/assessments/${assessmentId}/status`).set(as(owner)).expect(200);
-    expect(status.body.transcriptsPending).toBe(0);
+    expect(status.body).toMatchObject({ transcriptsPending: 0, transcriptsFailed: 1 });
 
+    await api()
+      .post(`/v1/assessments/${assessmentId}/responses/${byType('AUDIO_ADAPTIVE')[1]!.code}/audio`)
+      .set(as(owner))
+      .field('turnIndex', '0')
+      .attach('file', WEBM, { filename: 'nuevo.webm', contentType: 'audio/webm' })
+      .expect(201);
+    await transcription.transcribeTurn(
+      (await prisma.audioTurn.findFirstOrThrow({ where: { transcriptStatus: 'pending' } })).id,
+    );
+  });
+
+  it('permite el envío cuando todas las transcripciones están resueltas', async () => {
     const submitted = await api().post(`/v1/assessments/${assessmentId}/submit`).set(as(owner)).expect(201);
     expect(submitted.body).toMatchObject({
       status: 'submitted',
       progress: { answered: 56, total: 56 },
     });
     expect(submitted.body.submittedAt).not.toBeNull();
+  });
+
+  it('construye el registro de evidencia desde la base de datos (F3)', async () => {
+    const { input, inputHash } = await app.get(EvidenceService).buildForAssessment(assessmentId);
+
+    expect(input.counts).toEqual({ answerableQuestions: 56, evidenceItems: 57, unavailable: 0, facets: 24 });
+    expect(input.evidence.filter((e) => e.sourceType === 'NARRATIVE')).toHaveLength(9);
+    expect(input.dataQualityFlags.every((f) => f.code === 'SHORT_NARRATIVE')).toBe(true);
+    expect(input.dataQualityFlags).toHaveLength(9);
+    expect(inputHash).toMatch(/^[0-9a-f]{64}$/);
   });
 
   it('una evaluación enviada ya no admite cambios', async () => {
@@ -255,5 +285,7 @@ describe('Kriterial F2 · captura de la evaluación B1 (e2e)', () => {
     expect(turns).toHaveLength(1);
     const files = readdirSync(join(storageRoot, 'audio', id));
     expect(files).toEqual([turns[0]!.storageKey!.split('/').pop()]);
+
+    await expect(app.get(EvidenceService).buildForAssessment(id)).rejects.toThrow(/Solo se analizan/);
   });
 });

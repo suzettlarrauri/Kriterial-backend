@@ -101,10 +101,11 @@ export class AssessmentsService {
 
   async status(userId: string, assessmentId: string) {
     const assessment = await this.owned(userId, assessmentId);
-    const transcriptsPending = await this.prisma.audioTurn.count({
-      where: { response: { assessmentId }, transcriptStatus: 'pending' },
-    });
-    return { id: assessment.id, status: assessment.status, transcriptsPending };
+    const [transcriptsPending, transcriptsFailed] = await Promise.all([
+      this.prisma.audioTurn.count({ where: { response: { assessmentId }, transcriptStatus: 'pending' } }),
+      this.prisma.audioTurn.count({ where: { response: { assessmentId }, transcriptStatus: 'failed' } }),
+    ]);
+    return { id: assessment.id, status: assessment.status, transcriptsPending, transcriptsFailed };
   }
 
   async answer(
@@ -116,9 +117,11 @@ export class AssessmentsService {
     const assessment = await this.owned(userId, assessmentId);
     const question = await this.questionByCode(assessment.instrumentId, questionCode);
     const resolved = this.resolve(question, body);
-    const optionId = resolved.optionCode
-      ? question.options.find((o) => o.optionCode === resolved.optionCode)!.id
-      : null;
+    const option = resolved.optionCode
+      ? question.options.find((o) => o.optionCode === resolved.optionCode)
+      : undefined;
+    if (resolved.optionCode && !option) throw new BadRequestException('La opción no existe en esta pregunta');
+    const optionId = option?.id ?? null;
 
     await this.prisma.$transaction(async (tx) => {
       await this.lock(tx, assessmentId);
@@ -261,13 +264,27 @@ export class AssessmentsService {
         });
       }
 
-      const pending = await tx.audioTurn.count({
-        where: { response: { assessmentId }, transcriptStatus: 'pending' },
+      const unresolved = await tx.audioTurn.findMany({
+        where: { response: { assessmentId }, transcriptStatus: { in: ['pending', 'failed'] } },
+        select: {
+          turnIndex: true,
+          transcriptStatus: true,
+          response: { select: { question: { select: { code: true } } } },
+        },
+        orderBy: [{ response: { question: { code: 'asc' } } }, { turnIndex: 'asc' }],
       });
-      if (pending > 0) {
+      if (unresolved.length > 0) {
+        const failed = unresolved.filter((u) => u.transcriptStatus === 'failed');
         throw new ConflictException({
-          message: 'Hay audios pendientes de transcribir; intenta de nuevo en unos minutos',
-          transcriptsPending: pending,
+          message:
+            failed.length > 0
+              ? 'Hay audios que no se pudieron transcribir. Vuelve a grabarlos para poder enviar.'
+              : 'Hay audios pendientes de transcribir; intenta de nuevo en unos minutos',
+          transcriptsPending: unresolved.length - failed.length,
+          transcriptsFailed: failed.map((u) => ({
+            questionCode: u.response.question.code,
+            turnIndex: u.turnIndex,
+          })),
         });
       }
 
