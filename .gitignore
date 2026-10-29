@@ -16,8 +16,8 @@ src/generated/
 api-key*.txt
 secrets.php
 
-# audios y transcripciones locales (datos sensibles)
-storage/
+# audios y transcripciones locales (datos sensibles); solo la raíz, no src/storage/
+/storage/
 
 # logs y SO
 *.log

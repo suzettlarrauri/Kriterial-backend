@@ -1,4 +1,4 @@
-import { mkdtempSync, readFileSync, rmSync } from 'node:fs';
+import { mkdtempSync, readdirSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import type { INestApplication } from '@nestjs/common';
@@ -225,5 +225,35 @@ describe('Kriterial F2 · captura de la evaluación B1 (e2e)', () => {
       .set(as(other))
       .send({ likertValue: 1 })
       .expect(404);
+  });
+
+  it('serializa peticiones simultáneas sobre la misma pregunta sin errores ni archivos huérfanos', async () => {
+    await api().put('/v1/participants/me').set(as(other)).send({ consentVersion: 'borrador-D7' }).expect(200);
+    const created = await api().post('/v1/assessments').set(as(other)).send({ blockCode: 'B1' }).expect(201);
+    const id = created.body.id as string;
+    const audio = byType('AUDIO_ADAPTIVE')[0]!.code;
+    const likert = byType('LIKERT_5')[0]!.code;
+
+    const answers = await Promise.all([
+      api().put(`/v1/assessments/${id}/responses/${likert}`).set(as(other)).send({ likertValue: 2 }),
+      api().put(`/v1/assessments/${id}/responses/${likert}`).set(as(other)).send({ likertValue: 5 }),
+    ]);
+    for (const res of answers) expect(res.status).toBe(200);
+
+    const uploads = await Promise.all(
+      [1, 2].map(() =>
+        api()
+          .post(`/v1/assessments/${id}/responses/${audio}/audio`)
+          .set(as(other))
+          .field('turnIndex', '0')
+          .attach('file', WEBM, { filename: 'r.webm', contentType: 'audio/webm' }),
+      ),
+    );
+    for (const res of uploads) expect(res.status).toBe(201);
+
+    const turns = await prisma.audioTurn.findMany({ where: { response: { assessmentId: id } } });
+    expect(turns).toHaveLength(1);
+    const files = readdirSync(join(storageRoot, 'audio', id));
+    expect(files).toEqual([turns[0]!.storageKey!.split('/').pop()]);
   });
 });

@@ -20,7 +20,9 @@ import { type AnswerInput, answerBodySchema } from './answer-rules.js';
 import { AssessmentsService } from './assessments.service.js';
 
 const createSchema = z.object({ blockCode: z.enum(['B1']) }).strict();
-const audioFormSchema = z.object({ turnIndex: z.coerce.number().int().min(0).max(20) });
+const audioFormSchema = z
+  .object({ turnIndex: z.coerce.number().int().min(0).max(20) })
+  .strict();
 
 interface UploadedAudio {
   mimetype: string;

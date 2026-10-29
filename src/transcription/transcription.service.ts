@@ -35,8 +35,10 @@ export class TranscriptionService {
     const failed = text.length === 0 || text.includes(TRANSCRIPTION_FAILED_MARKER);
     const qualityFlags = failed ? ['TRANSCRIPT_EMPTY_OR_FAILED'] : [];
 
-    await this.prisma.audioTurn.update({
-      where: { id: turn.id },
+    // Solo se escribe si el turno sigue siendo el mismo audio: una re-subida durante la transcripción
+    // deja obsoleto este resultado y no debe sobrescribir al nuevo.
+    const updated = await this.prisma.audioTurn.updateMany({
+      where: { id: turn.id, transcriptStatus: 'pending', storageKey: turn.storageKey },
       data: {
         transcript: failed ? null : text,
         transcriptionProvider: result.provider,
@@ -45,6 +47,10 @@ export class TranscriptionService {
         qualityFlags,
       },
     });
+    if (updated.count === 0) {
+      this.logger.log(`turno ${turn.id}: resultado descartado (el audio cambió durante la transcripción)`);
+      return;
+    }
     this.logger.log(`turno ${turn.id} transcrito: ${failed ? 'fallido' : 'ok'}`);
   }
 }
