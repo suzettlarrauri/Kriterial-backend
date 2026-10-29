@@ -22,4 +22,13 @@ describe('parseEnv', () => {
     expect(() => parseEnv({ ...valid, DATABASE_URL: 'mysql://localhost/db' })).toThrow(/DATABASE_URL/);
     expect(() => parseEnv({ ...valid, REDIS_URL: 'http://localhost' })).toThrow(/REDIS_URL/);
   });
+
+  it('no permite el proveedor de transcripción simulado en producción', () => {
+    expect(() => parseEnv({ ...valid, NODE_ENV: 'production' })).toThrow(/TRANSCRIPTION_PROVIDER/);
+  });
+
+  it('exige clave de Anthropic para el modo live del LLM', () => {
+    expect(() => parseEnv({ ...valid, LLM_MODE: 'live' })).toThrow(/ANTHROPIC_API_KEY/);
+    expect(parseEnv({ ...valid, LLM_MODE: 'replay' }).LLM_MODE).toBe('replay');
+  });
 });

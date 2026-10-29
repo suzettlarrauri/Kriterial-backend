@@ -16,6 +16,9 @@ src/generated/
 api-key*.txt
 secrets.php
 
+# audios y transcripciones locales (datos sensibles)
+storage/
+
 # logs y SO
 *.log
 .DS_Store

@@ -56,6 +56,7 @@ model Participant {
   consentVersion  String?         @map("consent_version")
   createdAt       DateTime        @default(now()) @map("created_at") @db.Timestamptz
   updatedAt       DateTime        @updatedAt @map("updated_at") @db.Timestamptz
+  assessments     Assessment[]
 
   @@map("participants")
 }
@@ -87,9 +88,10 @@ model Instrument {
   // Hash del seed canónico: una versión publicada no puede cambiar de contenido.
   sourceHash String           @map("source_hash")
   notes      String?
-  createdAt  DateTime         @default(now()) @map("created_at") @db.Timestamptz
-  facets     Facet[]
-  questions  Question[]
+  createdAt   DateTime         @default(now()) @map("created_at") @db.Timestamptz
+  facets      Facet[]
+  questions   Question[]
+  assessments Assessment[]
 
   @@unique([blockCode, version])
   @@map("instruments")
@@ -141,6 +143,7 @@ model Question {
   evidencePreserves String?          @map("evidence_preserves")
   inferenceLimit    String?          @map("inference_limit")
   options           QuestionOption[]
+  responses         Response[]
 
   @@unique([instrumentId, code])
   @@unique([instrumentId, position])
@@ -148,15 +151,93 @@ model Question {
 }
 
 model QuestionOption {
-  id         String   @id @default(uuid()) @db.Uuid
-  questionId String   @map("question_id") @db.Uuid
-  question   Question @relation(fields: [questionId], references: [id])
-  optionCode String   @map("option_code")
+  id         String     @id @default(uuid()) @db.Uuid
+  questionId String     @map("question_id") @db.Uuid
+  question   Question   @relation(fields: [questionId], references: [id])
+  optionCode String     @map("option_code")
   position   Int
   text       String
+  responses  Response[]
 
   @@unique([questionId, optionCode])
   @@map("question_options")
+}
+
+// ============ EVALUACIÓN Y RESPUESTAS (F2) ============
+
+enum AssessmentStatus {
+  in_progress
+  submitted
+  processing
+  completed
+  cancelled
+
+  @@map("assessment_status")
+}
+
+enum TranscriptStatus {
+  pending
+  ok
+  partial
+  failed
+
+  @@map("transcript_status")
+}
+
+model Assessment {
+  id            String           @id @default(uuid()) @db.Uuid
+  participantId String           @map("participant_id") @db.Uuid
+  participant   Participant      @relation(fields: [participantId], references: [id])
+  instrumentId  String           @map("instrument_id") @db.Uuid
+  instrument    Instrument       @relation(fields: [instrumentId], references: [id])
+  blockCode     String           @map("block_code")
+  status        AssessmentStatus @default(in_progress)
+  submittedAt   DateTime?        @map("submitted_at") @db.Timestamptz
+  createdAt     DateTime         @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt     DateTime         @updatedAt @map("updated_at") @db.Timestamptz
+  responses     Response[]
+
+  // Índice parcial (una evaluación activa por bloque) en la migración SQL.
+  @@map("assessments")
+}
+
+model Response {
+  id           String          @id @default(uuid()) @db.Uuid
+  assessmentId String          @map("assessment_id") @db.Uuid
+  assessment   Assessment      @relation(fields: [assessmentId], references: [id], onDelete: Cascade)
+  questionId   String          @map("question_id") @db.Uuid
+  question     Question        @relation(fields: [questionId], references: [id])
+  likertValue  Int?            @map("likert_value") @db.SmallInt
+  optionId     String?         @map("option_id") @db.Uuid
+  option       QuestionOption? @relation(fields: [optionId], references: [id])
+  declined     Boolean         @default(false)
+  answeredAt   DateTime        @default(now()) @map("answered_at") @db.Timestamptz
+  audioTurns   AudioTurn[]
+
+  @@unique([assessmentId, questionId])
+  @@map("responses")
+}
+
+model AudioTurn {
+  id                     String           @id @default(uuid()) @db.Uuid
+  responseId             String           @map("response_id") @db.Uuid
+  response               Response         @relation(fields: [responseId], references: [id], onDelete: Cascade)
+  // 0 = pregunta principal; n > 0 = seguimiento n (texto exacto mostrado).
+  turnIndex              Int              @map("turn_index") @db.SmallInt
+  promptText             String           @map("prompt_text")
+  storageKey             String?          @map("storage_key")
+  mimeType               String?          @map("mime_type")
+  sizeBytes              Int?             @map("size_bytes")
+  transcript             String?
+  transcriptionProvider  String?          @map("transcription_provider")
+  transcriptionModel     String?          @map("transcription_model")
+  transcriptStatus       TranscriptStatus @default(pending) @map("transcript_status")
+  qualityFlags           Json             @default("[]") @map("quality_flags")
+  createdAt              DateTime         @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt              DateTime         @updatedAt @map("updated_at") @db.Timestamptz
+
+  @@unique([responseId, turnIndex])
+  @@map("audio_turns")
 }
 
 // ============ PROMPTS ============

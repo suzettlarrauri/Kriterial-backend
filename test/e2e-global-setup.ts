@@ -21,7 +21,7 @@ export default async function setup(): Promise<void> {
 
   const db = new pg.Client({ connectionString: testUrl });
   await db.connect();
-  await db.query(`TRUNCATE question_options, questions, facets, instruments, scales,
-                  prompt_bundles, participants, users, audit_log RESTART IDENTITY CASCADE`);
+  await db.query(`TRUNCATE audio_turns, responses, assessments, question_options, questions, facets,
+                  instruments, scales, prompt_bundles, participants, users, audit_log RESTART IDENTITY CASCADE`);
   await db.end();
 }

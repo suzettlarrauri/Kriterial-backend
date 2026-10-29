@@ -3,7 +3,7 @@
 API y worker del pipeline de diagnóstico de Kriterial (NestJS 12 + PostgreSQL 16 + BullMQ).
 Diseño completo: [`../PLAN_ARQUITECTURA_BLOQUE_1.md`](../PLAN_ARQUITECTURA_BLOQUE_1.md).
 
-**Estado:** fase **F1 (fundaciones)** completada. El pipeline LLM (F3–F6) aún no existe.
+**Estado:** fases **F1 (fundaciones)** y **F2 (captura)** completadas. El pipeline LLM (F3–F6) aún no existe.
 
 ## Requisitos
 
@@ -60,6 +60,11 @@ src/
   auth/                Guard global JWT: todo exige token salvo @Public(); roles con @Roles()
   prisma/              Cliente Prisma 7 con adaptador pg
   instruments/         Instrumentos versionados; vista pública sin metadatos internos
+  participants/       Perfil, forma gramatical y consentimiento del participante
+  assessments/        Evaluación B1: respuestas, reglas por tipo de pregunta, envío
+  media/               Validación de audios (MIME, tamaño y firma binaria)
+  storage/             Almacenamiento privado de objetos (disco local en desarrollo)
+  transcription/       Proveedor de transcripción y servicio que procesa turnos
   prompts/             PromptRegistry: verifica hashes, compone etapas, registra bundles
   queue/, worker/      BullMQ: cola `pipeline` y su processor
   health/              /health (base de datos y Redis)
@@ -67,6 +72,25 @@ src/
   main.ts, worker.ts   Puntos de entrada: API y worker (mismo código, procesos separados)
 test/                  Pruebas e2e
 ```
+
+## Flujo de captura (F2)
+
+| Método | Ruta | Qué hace |
+|---|---|---|
+| `PUT` | `/v1/participants/me` | Perfil, forma gramatical y consentimiento (`consentVersion`) |
+| `POST` | `/v1/assessments` | Crea la evaluación B1; exige consentimiento y una sola activa por bloque |
+| `GET` | `/v1/assessments/:id` | Estado completo para reanudar (respuestas, audios, progreso) |
+| `PUT` | `/v1/assessments/:id/responses/:questionCode` | Respuesta idempotente: `likertValue`, `optionCode` o `declined` |
+| `POST` | `/v1/assessments/:id/responses/:questionCode/audio` | Subida multipart (`file`, `turnIndex`); valida formato real y tamaño |
+| `GET` | `/v1/assessments/:id/status` | Estado y transcripciones pendientes |
+| `POST` | `/v1/assessments/:id/submit` | Congela la evaluación; falla si faltan respuestas o transcripciones |
+
+Notas:
+- Cada participante solo ve y modifica sus evaluaciones; ajenas responden `404`.
+- Los audios se transcriben en el worker (trabajo `transcription.turn`). El proveedor real aún no existe:
+  `TRANSCRIPTION_PROVIDER=fake` y el arranque falla si se usa en producción.
+- Los audios se guardan en `STORAGE_DIR` (por defecto `storage/`, ignorado por git).
+- `LLM_MODE=replay` (por defecto) no llama a la API de Anthropic. `live` exige `ANTHROPIC_API_KEY`.
 
 ## Reglas que el código hace cumplir
 

@@ -21,13 +21,37 @@ export const envSchema = z.object({
         .filter(Boolean),
     ),
   PROMPTS_DIR: z.string().min(1).default('prompts'),
+  // Raíz del almacenamiento local de audios (relativa al directorio del proyecto).
+  STORAGE_DIR: z.string().min(1).default('storage'),
+  // `fake` solo para desarrollo y pruebas; el proveedor real se añade con la integración de transcripción.
+  TRANSCRIPTION_PROVIDER: z.enum(['fake']).default('fake'),
+  // `replay` no llama a la API de Anthropic; `live` la usa (requiere ANTHROPIC_API_KEY).
+  LLM_MODE: z.enum(['replay', 'live']).default('replay'),
+  ANTHROPIC_API_KEY: z.string().optional(),
 });
 
 export type Env = z.infer<typeof envSchema>;
 
 /** Valida el entorno y falla al arrancar con un mensaje legible. */
 export function parseEnv(source: NodeJS.ProcessEnv): Env {
-  const result = envSchema.safeParse(source);
+  const result = envSchema
+    .superRefine((env, ctx) => {
+      if (env.NODE_ENV === 'production' && env.TRANSCRIPTION_PROVIDER === 'fake') {
+        ctx.addIssue({
+          code: 'custom',
+          path: ['TRANSCRIPTION_PROVIDER'],
+          message: 'el proveedor simulado no puede usarse en producción',
+        });
+      }
+      if (env.LLM_MODE === 'live' && !env.ANTHROPIC_API_KEY) {
+        ctx.addIssue({
+          code: 'custom',
+          path: ['ANTHROPIC_API_KEY'],
+          message: 'LLM_MODE=live requiere ANTHROPIC_API_KEY',
+        });
+      }
+    })
+    .safeParse(source);
   if (!result.success) {
     const issues = result.error.issues
       .map((i) => `  - ${i.path.join('.')}: ${i.message}`)
