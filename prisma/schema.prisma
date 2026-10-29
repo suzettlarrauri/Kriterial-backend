@@ -1,0 +1,188 @@
+// Esquema Kriterial — Fase F1: identidad, instrumentos versionados,
+// bundles de prompts y registro de auditoría.
+// Las tablas de evaluación, pipeline y reportes se añaden en F2–F6
+// (ver PLAN_ARQUITECTURA_BLOQUE_1.md §3.5).
+
+generator client {
+  provider            = "prisma-client"
+  output              = "../src/generated/prisma"
+  moduleFormat        = "esm"
+  importFileExtension = "js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ============ IDENTIDAD ============
+
+enum UserRole {
+  candidate
+  analyst
+  admin
+
+  @@map("user_role")
+}
+
+enum GrammaticalForm {
+  feminine
+  masculine
+  neutral
+
+  @@map("grammatical_form")
+}
+
+model User {
+  id             String       @id @default(uuid()) @db.Uuid
+  email          String       @unique
+  role           UserRole     @default(candidate)
+  externalAuthId String?      @unique @map("external_auth_id")
+  createdAt      DateTime     @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt      DateTime     @updatedAt @map("updated_at") @db.Timestamptz
+  participant    Participant?
+
+  @@map("users")
+}
+
+model Participant {
+  id              String          @id @default(uuid()) @db.Uuid
+  userId          String          @unique @map("user_id") @db.Uuid
+  user            User            @relation(fields: [userId], references: [id])
+  displayName     String?         @map("display_name")
+  // Declarada por la persona; nunca se infiere del nombre (decisión D5).
+  grammaticalForm GrammaticalForm @default(neutral) @map("grammatical_form")
+  language        String          @default("es")
+  consentAt       DateTime?       @map("consent_at") @db.Timestamptz
+  consentVersion  String?         @map("consent_version")
+  createdAt       DateTime        @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt       DateTime        @updatedAt @map("updated_at") @db.Timestamptz
+
+  @@map("participants")
+}
+
+// ============ INSTRUMENTO (versionado e inmutable) ============
+
+enum InstrumentStatus {
+  draft
+  published
+  retired
+
+  @@map("instrument_status")
+}
+
+enum QuestionType {
+  LIKERT_5
+  SCENARIO_SINGLE_CHOICE
+  AUDIO_ADAPTIVE
+  PAUSE
+
+  @@map("question_type")
+}
+
+model Instrument {
+  id         String           @id @default(uuid()) @db.Uuid
+  blockCode  String           @map("block_code")
+  version    String
+  status     InstrumentStatus
+  // Hash del seed canónico: una versión publicada no puede cambiar de contenido.
+  sourceHash String           @map("source_hash")
+  notes      String?
+  createdAt  DateTime         @default(now()) @map("created_at") @db.Timestamptz
+  facets     Facet[]
+  questions  Question[]
+
+  @@unique([blockCode, version])
+  @@map("instruments")
+}
+
+model Scale {
+  id        String     @id @default(uuid()) @db.Uuid
+  code      String     @unique
+  anchors   Json
+  questions Question[]
+
+  @@map("scales")
+}
+
+model Facet {
+  id            String     @id @default(uuid()) @db.Uuid
+  instrumentId  String     @map("instrument_id") @db.Uuid
+  instrument    Instrument @relation(fields: [instrumentId], references: [id])
+  code          String
+  domain        String
+  label         String
+  // Etiquetas propuestas por el equipo técnico; pendientes de la metodóloga (D2).
+  labelApproved Boolean    @default(false) @map("label_approved")
+  questions     Question[]
+
+  @@unique([instrumentId, code])
+  @@map("facets")
+}
+
+model Question {
+  id                String           @id @default(uuid()) @db.Uuid
+  instrumentId      String           @map("instrument_id") @db.Uuid
+  instrument        Instrument       @relation(fields: [instrumentId], references: [id])
+  code              String
+  position          Int
+  type              QuestionType
+  phase             String?
+  domain            String?
+  facetId           String?          @map("facet_id") @db.Uuid
+  facet             Facet?           @relation(fields: [facetId], references: [id])
+  scaleId           String?          @map("scale_id") @db.Uuid
+  scale             Scale?           @relation(fields: [scaleId], references: [id])
+  text              String
+  preInstruction    String?          @map("pre_instruction")
+  // Polaridad respecto a la faceta: 1 directa, -1 inversa. Null hasta que la
+  // metodóloga firme la clave (D2).
+  polarity          Int?             @db.SmallInt
+  followUps         Json?            @map("follow_ups")
+  evidencePreserves String?          @map("evidence_preserves")
+  inferenceLimit    String?          @map("inference_limit")
+  options           QuestionOption[]
+
+  @@unique([instrumentId, code])
+  @@unique([instrumentId, position])
+  @@map("questions")
+}
+
+model QuestionOption {
+  id         String   @id @default(uuid()) @db.Uuid
+  questionId String   @map("question_id") @db.Uuid
+  question   Question @relation(fields: [questionId], references: [id])
+  optionCode String   @map("option_code")
+  position   Int
+  text       String
+
+  @@unique([questionId, optionCode])
+  @@map("question_options")
+}
+
+// ============ PROMPTS ============
+
+model PromptBundle {
+  id         String   @id @default(uuid()) @db.Uuid
+  blockCode  String   @map("block_code")
+  stage      String
+  manifest   Json
+  bundleHash String   @unique @map("bundle_hash")
+  createdAt  DateTime @default(now()) @map("created_at") @db.Timestamptz
+
+  @@map("prompt_bundles")
+}
+
+// ============ AUDITORÍA ============
+
+model AuditLog {
+  id       BigInt   @id @default(autoincrement())
+  actorId  String?  @map("actor_id") @db.Uuid
+  action   String
+  entity   String
+  entityId String?  @map("entity_id")
+  details  Json?
+  at       DateTime @default(now()) @db.Timestamptz
+
+  @@index([entity, entityId])
+  @@map("audit_log")
+}

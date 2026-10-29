@@ -1,0 +1,1243 @@
+{
+  "blockCode": "B1",
+  "version": "0.9",
+  "status": "retired",
+  "notes": "Versión con la que se generó el reporte canónico (caso de referencia #1): preguntas de audio largas, sin seguimientos adaptativos.",
+  "provenance": "old-sistem/audios/preguntas.json + anclas de old-sistem/audios/app.js; enunciados de audio de instruments/sources/b1@0.9.audio-prompts.json",
+  "scales": [
+    {
+      "code": "SCALE-FREQ-5",
+      "anchors": [
+        "Nunca",
+        "Rara vez",
+        "A veces",
+        "A menudo",
+        "Casi siempre"
+      ]
+    },
+    {
+      "code": "SCALE-FIT-5",
+      "anchors": [
+        "No me describe",
+        "Me describe poco",
+        "Me describe algo",
+        "Me describe bastante",
+        "Me describe mucho"
+      ]
+    }
+  ],
+  "facets": [
+    {
+      "code": "R1",
+      "domain": "Responsabilidad",
+      "label": "Auto-estructuración",
+      "labelApproved": false
+    },
+    {
+      "code": "R2",
+      "domain": "Responsabilidad",
+      "label": "Inicio y continuidad sin supervisión",
+      "labelApproved": false
+    },
+    {
+      "code": "R3",
+      "domain": "Responsabilidad",
+      "label": "Ambición y estándar personal",
+      "labelApproved": false
+    },
+    {
+      "code": "R4",
+      "domain": "Responsabilidad",
+      "label": "Vigencia de compromisos",
+      "labelApproved": false
+    },
+    {
+      "code": "R5",
+      "domain": "Responsabilidad",
+      "label": "Deliberación antes de decidir",
+      "labelApproved": false
+    },
+    {
+      "code": "O1",
+      "domain": "Apertura",
+      "label": "Profundidad de exploración intelectual",
+      "labelApproved": false
+    },
+    {
+      "code": "O2",
+      "domain": "Apertura",
+      "label": "Experimentación con métodos",
+      "labelApproved": false
+    },
+    {
+      "code": "O3",
+      "domain": "Apertura",
+      "label": "Imaginación y generación de posibilidades",
+      "labelApproved": false
+    },
+    {
+      "code": "O4",
+      "domain": "Apertura",
+      "label": "Sensibilidad estética y a la experiencia",
+      "labelApproved": false
+    },
+    {
+      "code": "E1",
+      "domain": "Extraversión",
+      "label": "Necesidad de contacto e iniciativa social",
+      "labelApproved": false
+    },
+    {
+      "code": "E2",
+      "domain": "Extraversión",
+      "label": "Asertividad",
+      "labelApproved": false
+    },
+    {
+      "code": "E3",
+      "domain": "Extraversión",
+      "label": "Nivel de actividad espontánea",
+      "labelApproved": false
+    },
+    {
+      "code": "E4",
+      "domain": "Extraversión",
+      "label": "Búsqueda de estimulación",
+      "labelApproved": false
+    },
+    {
+      "code": "E5",
+      "domain": "Extraversión",
+      "label": "Entusiasmo y expresión emocional positiva",
+      "labelApproved": false
+    },
+    {
+      "code": "A1",
+      "domain": "Amabilidad",
+      "label": "Consideración interpersonal",
+      "labelApproved": false
+    },
+    {
+      "code": "A2",
+      "domain": "Amabilidad",
+      "label": "Flexibilidad en el desacuerdo",
+      "labelApproved": false
+    },
+    {
+      "code": "A3",
+      "domain": "Amabilidad",
+      "label": "Confianza inicial",
+      "labelApproved": false
+    },
+    {
+      "code": "EE1",
+      "domain": "Estabilidad Emocional",
+      "label": "Preocupación anticipada",
+      "labelApproved": false
+    },
+    {
+      "code": "EE2",
+      "domain": "Estabilidad Emocional",
+      "label": "Reactividad ante interrupciones",
+      "labelApproved": false
+    },
+    {
+      "code": "EE3",
+      "domain": "Estabilidad Emocional",
+      "label": "Sensibilidad a la evaluación",
+      "labelApproved": false
+    },
+    {
+      "code": "HH1",
+      "domain": "Honestidad-Humildad",
+      "label": "Sinceridad y manejo de impresiones",
+      "labelApproved": false
+    },
+    {
+      "code": "HH2",
+      "domain": "Honestidad-Humildad",
+      "label": "Justicia en beneficios económicos",
+      "labelApproved": false
+    },
+    {
+      "code": "HH3",
+      "domain": "Honestidad-Humildad",
+      "label": "Motivación por estatus visible",
+      "labelApproved": false
+    },
+    {
+      "code": "HH4",
+      "domain": "Honestidad-Humildad",
+      "label": "Aceptación de privilegios por posición",
+      "labelApproved": false
+    }
+  ],
+  "questions": [
+    {
+      "code": "B1-INICIO",
+      "type": "PAUSE",
+      "phase": "Arquitectura Personal 360°",
+      "domain": null,
+      "facetCode": null,
+      "scaleCode": null,
+      "text": "Bienvenido a la Evaluación (Bloque 1).",
+      "preInstruction": "Responde pensando en cómo sueles actuar realmente en trabajo, estudios, proyectos personales o responsabilidades importantes. No respondas según cómo crees que deberías actuar. No existen respuestas 'mejores' o 'peores'.",
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "RESP-C01A",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Responsabilidad",
+      "facetCode": "R1",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando tengo varias responsabilidades importantes al mismo tiempo, suelo sentirme más cómodo si establezco algún orden o estructura para atenderlas.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "RESP-C01B",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Responsabilidad",
+      "facetCode": "R1",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Si tengo claro el resultado que debo conseguir, me siento cómodo empezando aunque todavía no haya definido el orden o el proceso que seguiré.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "RESP-C02A",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Responsabilidad",
+      "facetCode": "R2",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando una tarea importante depende principalmente de mí y nadie está supervisándome, suelo iniciarla con tiempo suficiente sin necesitar presión de último momento.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "RESP-C02B",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Responsabilidad",
+      "facetCode": "R2",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando una tarea importante deja de ser interesante y nadie está supervisándome, me cuesta mantener un ritmo constante hasta terminarla o cerrarla de forma consciente.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "RESP-C03A",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Responsabilidad",
+      "facetCode": "R3",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "En proyectos que considero importantes, suelo proponerme objetivos que me exigen mejorar respecto a lo que ya sé o hago.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "RESP-C03B",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Responsabilidad",
+      "facetCode": "R3",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando algo ya cumple correctamente con lo esperado, normalmente no siento una necesidad personal de elevar el estándar para la próxima vez.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "RESP-C04A",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Responsabilidad",
+      "facetCode": "R4",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando acepto voluntariamente un compromiso con otra persona, lo considero vigente hasta cumplirlo o renegociarlo explícitamente.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "RESP-C04B",
+      "type": "SCENARIO_SINGLE_CHOICE",
+      "phase": "Personalidad Profunda",
+      "domain": "Responsabilidad",
+      "facetCode": "R4",
+      "scaleCode": null,
+      "text": "Aceptaste entregar algo importante el viernes. El miércoles aparece una oportunidad inesperada y muy valiosa que requiere gran parte del tiempo que habías reservado. No puedes atender ambas cosas exactamente como estaban planeadas. ¿Qué se parece más a lo que tenderías a hacer?",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": [
+        {
+          "code": "OPT_A",
+          "text": "Mantengo el compromiso original aunque tenga que dejar pasar la nueva oportunidad."
+        },
+        {
+          "code": "OPT_B",
+          "text": "Antes de cambiar el compromiso, hablo con la otra persona e intento acordar una nueva condición o fecha."
+        },
+        {
+          "code": "OPT_C",
+          "text": "Priorizo la nueva oportunidad y aviso del cambio, confiando en compensar después el incumplimiento."
+        },
+        {
+          "code": "OPT_D",
+          "text": "Intento hacer ambas cosas aunque exista un riesgo importante de entregar tarde o con menor calidad."
+        }
+      ]
+    },
+    {
+      "code": "RESP-C05A",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Responsabilidad",
+      "facetCode": "R5",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Antes de tomar una decisión importante, suelo detenerme a considerar algunas consecuencias y alternativas antes de actuar.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "RESP-C05B",
+      "type": "SCENARIO_SINGLE_CHOICE",
+      "phase": "Personalidad Profunda",
+      "domain": "Responsabilidad",
+      "facetCode": "R5",
+      "scaleCode": null,
+      "text": "Aparece una oportunidad atractiva y tienes 24 horas para decidir. Ya conoces lo esencial, pero faltan algunos datos que podrían cambiar las consecuencias de tu decisión. ¿Qué se parece más a tu tendencia natural?",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": [
+        {
+          "code": "OPT_A",
+          "text": "Decido relativamente pronto con la información disponible y ajusto después si aparece algo nuevo."
+        },
+        {
+          "code": "OPT_B",
+          "text": "Hago una pausa, identifico las consecuencias principales y aclaro solo la información que podría cambiar mi decisión."
+        },
+        {
+          "code": "OPT_C",
+          "text": "Intento reunir toda la información posible antes de decidir, aunque eso reduzca considerablemente el tiempo restante."
+        },
+        {
+          "code": "OPT_D",
+          "text": "Prefiero posponer la decisión hasta sentirme muy seguro, aunque exista la posibilidad de perder la oportunidad."
+        }
+      ]
+    },
+    {
+      "code": "RESP-H01",
+      "type": "AUDIO_ADAPTIVE",
+      "phase": "Personalidad Profunda",
+      "domain": "Responsabilidad",
+      "facetCode": null,
+      "scaleCode": null,
+      "text": "Piensa en una responsabilidad, proyecto o actividad importante que haya durado varias semanas y en la que una parte importante del avance dependiera de ti, con poca supervisión directa. Cuéntanos brevemente:\n- ¿Qué necesitabas conseguir?\n- ¿Cómo organizaste o comenzaste el trabajo?\n- ¿Qué ocurrió cuando aparecieron otras prioridades, disminuyó el entusiasmo inicial o surgieron dificultades?\n- ¿Había fechas, compromisos o personas que dependieran de ti? ¿Cómo los manejaste?\n- Describe una decisión importante dentro de ese proyecto: ¿actuaste rápidamente o te detuviste a pensar antes de hacerlo? ¿Qué hiciste?",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": "Auto-estructuración, inicio autónomo, continuidad cuando baja el interés, respuesta a presión/compromisos y estilo de decisión.",
+      "inferenceLimit": "No inferir capacidad de ejecución, disciplina, liderazgo ni resultados si la persona no los describe.",
+      "options": []
+    },
+    {
+      "code": "PAUSA-APERTURA",
+      "type": "PAUSE",
+      "phase": "Transición",
+      "domain": null,
+      "facetCode": null,
+      "scaleCode": null,
+      "text": "¡Excelente! Hemos completado el primer dominio.",
+      "preInstruction": "A continuación exploraremos cómo te relacionas con la novedad, el aprendizaje y las ideas. Algunas personas disfrutan explorar constantemente y otras prefieren profundizar en lo conocido. Haz clic en Continuar cuando estés listo.",
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "APER-C01A",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Apertura",
+      "facetCode": "O1",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando un tema despierta genuinamente mi interés, suelo buscar entenderlo con mayor profundidad aunque esa información no sea necesaria para resolver algo inmediato.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "APER-C01B",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Apertura",
+      "facetCode": "O1",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando ya entiendo lo suficiente de un tema para resolver lo que necesito, normalmente dejo de explorarlo aunque todavía haya cosas interesantes por descubrir.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "APER-C02A",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Apertura",
+      "facetCode": "O2",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Aunque una forma conocida de hacer algo funcione bien, me resulta interesante probar ocasionalmente una alternativa simplemente para conocer cómo funciona.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "APER-C02B",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Apertura",
+      "facetCode": "O2",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando llevo bastante tiempo haciendo una actividad de la misma manera, normalmente prefiero mantener el método conocido mientras siga funcionando correctamente.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "APER-C03A",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Apertura",
+      "facetCode": "O3",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando pienso en una idea, proyecto o situación todavía no definida por completo, suelo imaginar espontáneamente varias formas en que podría desarrollarse.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "APER-C03B",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Apertura",
+      "facetCode": "O3",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando alguien me presenta una idea apenas iniciada, me resulta natural imaginar usos, versiones o posibilidades que todavía no se han planteado explícitamente.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "APER-C04A",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Apertura",
+      "facetCode": "O4",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Suelo notar características como iluminación, sonido, distribución, presentación, textura o atmósfera cuando experimento un lugar, producto o actividad.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "APER-C04B",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Apertura",
+      "facetCode": "O4",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "La forma en que una experiencia se ve, se siente o se presenta puede influir considerablemente en cómo la vivo, aun cuando su función práctica sea la misma.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "APER-H01",
+      "type": "AUDIO_ADAPTIVE",
+      "phase": "Personalidad Profunda",
+      "domain": "Apertura",
+      "facetCode": null,
+      "scaleCode": null,
+      "text": "Piensa en una ocasión de los últimos años en la que, sin que fuera estrictamente necesario, decidiste explorar con mayor profundidad un tema, una idea o una forma diferente de hacer algo. Cuéntanos brevemente:\n- ¿Qué despertó tu interés?\n- ¿Qué decidiste investigar, experimentar o explorar?\n- ¿Qué hiciste concretamente?\n- ¿Hasta dónde quisiste profundizar?\n- ¿Aparecieron nuevas posibilidades o maneras de entender el tema mientras lo explorabas?",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": "Profundidad de exploración, persistencia de curiosidad, variación de método e ideación.",
+      "inferenceLimit": "No convertir interés declarado en creatividad aplicada si no hay acciones o resultados.",
+      "options": []
+    },
+    {
+      "code": "APER-H02",
+      "type": "AUDIO_ADAPTIVE",
+      "phase": "Personalidad Profunda",
+      "domain": "Apertura",
+      "facetCode": null,
+      "scaleCode": null,
+      "text": "Piensa en un lugar, espacio, producto, experiencia, presentación, diseño, ambiente u otra situación que hayas vivido y cuyos detalles hayan llamado especialmente tu atención.\n- ¿Qué elementos específicos notaste?\n- ¿Qué efecto tuvieron en tu experiencia?\n- ¿Hubo algún detalle que para otras personas pudiera parecer poco importante pero para ti tuviera peso?",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": "Sensibilidad a presentación, atmósfera y detalles sensoriales.",
+      "inferenceLimit": "No inferir precisión administrativa, atención operativa al detalle o perfeccionismo.",
+      "options": []
+    },
+    {
+      "code": "PAUSA-EXTRAVERSION",
+      "type": "PAUSE",
+      "phase": "Transición",
+      "domain": null,
+      "facetCode": null,
+      "scaleCode": null,
+      "text": "Dominio completado con éxito.",
+      "preInstruction": "Ahora pasaremos a la Extraversión. Responde pensando en cómo sueles funcionar naturalmente, no en lo que tu trabajo te obliga a hacer. Una persona puede ser reservada y muy competente socialmente, o sociable sin disfrutar dirigir. Haz clic en Continuar.",
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "EXTR-C01A",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Extraversión",
+      "facetCode": "E1",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando paso bastante tiempo con poca interacción con otras personas, normalmente empiezo a echar de menos el contacto social y busco retomarlo.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "EXTR-C01B",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Extraversión",
+      "facetCode": "E1",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando estoy en un entorno donde conozco a pocas personas, suelo sentir inclinación a acercarme, conversar o integrarme sin necesitar que alguien me incluya primero.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "EXTR-C02A",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Extraversión",
+      "facetCode": "E2",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando considero que mi opinión es relevante, suelo expresarla aunque sea diferente a la de otras personas presentes.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "EXTR-C02B",
+      "type": "SCENARIO_SINGLE_CHOICE",
+      "phase": "Personalidad Profunda",
+      "domain": "Extraversión",
+      "facetCode": "E2",
+      "scaleCode": null,
+      "text": "En una reunión, el grupo parece dispuesto a seguir una decisión, pero tú consideras que hay un aspecto importante que todavía no se ha discutido. ¿Qué se parece más a tu tendencia habitual?",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": [
+        {
+          "code": "OPT_A",
+          "text": "Expreso directamente mi preocupación y explico por qué considero que debe discutirse."
+        },
+        {
+          "code": "OPT_B",
+          "text": "Planteo una pregunta que lleve al grupo a revisar ese aspecto antes de continuar."
+        },
+        {
+          "code": "OPT_C",
+          "text": "Espero a que alguien solicite mi opinión o a que el tema vuelva a surgir."
+        },
+        {
+          "code": "OPT_D",
+          "text": "Prefiero comentarlo después de la reunión con alguna persona involucrada."
+        }
+      ]
+    },
+    {
+      "code": "EXTR-C03A",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Extraversión",
+      "facetCode": "E3",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Me siento más cómodo cuando mi día mantiene un ritmo activo durante buena parte del tiempo que cuando contiene largos periodos con muy poca actividad.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "EXTR-C03B",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Extraversión",
+      "facetCode": "E3",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Incluso en días sin mucha presión externa, tiendo naturalmente a mantenerme haciendo cosas en lugar de pasar largos periodos sin actividad.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "EXTR-C04A",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Extraversión",
+      "facetCode": "E4",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Me atraen los ambientes o situaciones donde hay bastante intensidad, movimiento o sensación de que están ocurriendo muchas cosas, aunque la actividad en sí no sea nueva.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "EXTR-C04B",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Extraversión",
+      "facetCode": "E4",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Después de bastante tiempo en un ambiente tranquilo, estable y de baja intensidad, suelo empezar a sentir que necesito algo más estimulante aunque todo esté funcionando correctamente.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "EXTR-C05A",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Extraversión",
+      "facetCode": "E5",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando aparece una oportunidad que me resulta atractiva, suelo experimentar rápidamente entusiasmo o energía positiva, aun antes de saber si finalmente la aprovecharé.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "EXTR-C05B",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Extraversión",
+      "facetCode": "E5",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Incluso cuando algo me entusiasma mucho por dentro, mi reacción exterior suele mantenerse bastante contenida.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "EXTR-H01",
+      "type": "AUDIO_ADAPTIVE",
+      "phase": "Personalidad Profunda",
+      "domain": "Extraversión",
+      "facetCode": null,
+      "scaleCode": null,
+      "text": "Piensa en una jornada, proyecto, evento o periodo reciente en el que hayas tenido bastante libertad para decidir cómo involucrarte y a qué ritmo hacerlo. Descríbelo brevemente:\n- ¿Cuánta interacción con otras personas buscaste espontáneamente?\n- Si estabas con personas que conocías poco, ¿tendías a acercarte o esperabas a que otros iniciaran?\n- Cuando tenías algo importante que decir, ¿cómo tendías a expresarlo?\n- ¿Qué ritmo de actividad te resultaba más natural?\n- ¿Qué ocurría cuando el ambiente permanecía tranquilo o con poca estimulación durante bastante tiempo?\n- Si aparecía algo que te parecía especialmente interesante o prometedor, ¿cuál solía ser tu reacción inicial?",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": "Iniciativa social, necesidad de contacto, asertividad, actividad y búsqueda de estimulación.",
+      "inferenceLimit": "No inferir extraversión global, liderazgo, habilidad comercial ni nivel de idioma.",
+      "options": []
+    },
+    {
+      "code": "PAUSA-AMABILIDAD",
+      "type": "PAUSE",
+      "phase": "Transición",
+      "domain": null,
+      "facetCode": null,
+      "scaleCode": null,
+      "text": "Ya hemos recorrido la mitad de este módulo.",
+      "preInstruction": "A continuación evaluaremos la 'Amabilidad'. Responde pensando en cómo tiendes a actuar realmente cuando tus decisiones interactúan con las de otras personas. Considerar a otros no significa ceder siempre.",
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "AMAB-C01A",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Amabilidad",
+      "facetCode": "A1",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando una decisión mía puede afectar negativamente a otra persona, suelo considerar espontáneamente ese impacto antes de decidir qué hacer.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "AMAB-C01B",
+      "type": "SCENARIO_SINGLE_CHOICE",
+      "phase": "Personalidad Profunda",
+      "domain": "Amabilidad",
+      "facetCode": "A1",
+      "scaleCode": null,
+      "text": "Una persona con la que trabajas atraviesa una dificultad personal y te pide ayuda con una tarea que le corresponde. Ayudarla requeriría parte de tu tiempo, pero no pondría en riesgo una obligación importante. ¿Qué se parece más a tu tendencia natural?",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": [
+        {
+          "code": "OPT_A",
+          "text": "Intento ayudar de alguna manera, aunque implique hacer un ajuste razonable en mi tiempo."
+        },
+        {
+          "code": "OPT_B",
+          "text": "Primero evalúo cuánto apoyo necesita y hasta dónde puedo ayudar sin asumir su responsabilidad completa."
+        },
+        {
+          "code": "OPT_C",
+          "text": "Normalmente prefiero no involucrarme si la responsabilidad le corresponde exclusivamente a la otra persona."
+        },
+        {
+          "code": "OPT_D",
+          "text": "Tiendo a asumir una parte muy grande o incluso toda la tarea para reducirle la carga."
+        }
+      ]
+    },
+    {
+      "code": "AMAB-C02A",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Amabilidad",
+      "facetCode": "A2",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando existe un desacuerdo importante, suelo intentar comprender qué necesita o defiende la otra parte antes de decidir cómo responder.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "AMAB-C02B",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Amabilidad",
+      "facetCode": "A2",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando creo firmemente que mi posición es correcta, puedo seguir buscando una solución conjunta sin sentir que por hacerlo estoy renunciando necesariamente a mi postura.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "AMAB-C03",
+      "type": "SCENARIO_SINGLE_CHOICE",
+      "phase": "Personalidad Profunda",
+      "domain": "Amabilidad",
+      "facetCode": "A2",
+      "scaleCode": null,
+      "text": "Tú y otra persona deben tomar juntos una decisión importante. Ambos tienen razones legítimas, sus preferencias son diferentes y ninguna alternativa satisface completamente a los dos. ¿Qué se parece más a tu tendencia habitual?",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": [
+        {
+          "code": "OPT_A",
+          "text": "Expongo mi posición y busco una alternativa que conserve los intereses que considero importantes para ambas partes."
+        },
+        {
+          "code": "OPT_B",
+          "text": "Intento que la otra persona adopte mi alternativa mientras siga pensando que es claramente la mejor."
+        },
+        {
+          "code": "OPT_C",
+          "text": "Tiendo a ceder parte de lo que quería principalmente para reducir la tensión entre nosotros."
+        },
+        {
+          "code": "OPT_D",
+          "text": "Prefiero mantener mi posición y posponer la decisión mientras no exista una razón suficiente para modificarla."
+        }
+      ]
+    },
+    {
+      "code": "AMAB-C04A",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Amabilidad",
+      "facetCode": "A3",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando conozco a una persona y todavía tengo poca información sobre ella, normalmente parto concediéndole cierto crédito de buena intención mientras no aparezcan señales claras en contrario.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "AMAB-C04B",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Amabilidad",
+      "facetCode": "A3",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando comienzo a colaborar con alguien nuevo en algo de consecuencias limitadas y reversibles, me resulta natural darle un margen razonable de confianza inicial.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "AMAB-H01",
+      "type": "AUDIO_ADAPTIVE",
+      "phase": "Personalidad Profunda",
+      "domain": "Amabilidad",
+      "facetCode": null,
+      "scaleCode": null,
+      "text": "Piensa en una situación reciente en la que tus intereses o necesidades fueran diferentes de los de otra persona y tuvieran que tomar una decisión, resolver un problema o trabajar juntos. Cuéntanos brevemente:\n- ¿Qué necesitabas o querías tú?\n- ¿Qué entendías que necesitaba o quería la otra persona?\n- ¿Cómo manejaste la diferencia?\n- ¿Hubo algo que defendiste, algo que modificaste o algún límite que estableciste?\n- Antes de tener suficiente evidencia sobre cómo actuaría la otra persona, ¿qué nivel de confianza inicial le concediste y por qué?",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": "Consideración interpersonal, integración en desacuerdo, firmeza, límites y confianza inicial.",
+      "inferenceLimit": "No inferir capacidad de negociación, delegación o liderazgo.",
+      "options": []
+    },
+    {
+      "code": "PAUSA-EMOCIONAL",
+      "type": "PAUSE",
+      "phase": "Transición",
+      "domain": null,
+      "facetCode": null,
+      "scaleCode": null,
+      "text": "¡Muy bien! Acabamos de terminar el bloque de interacciones sociales.",
+      "preInstruction": "Las siguientes preguntas exploran tus reacciones emocionales iniciales ante incertidumbre y evaluación. No buscamos determinar si son 'correctas' o 'incorrectas'.",
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "EMOC-C01A",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Estabilidad Emocional",
+      "facetCode": "EE1",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando una situación importante todavía es incierta, la posibilidad de que algo salga mal suele aparecer rápidamente en mi mente y generar cierta preocupación o tensión, aun cuando también existan resultados favorables posibles.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "EMOC-C01B",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Estabilidad Emocional",
+      "facetCode": "EE1",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Después de haber pensado en los riesgos y realizado las acciones razonables que están a mi alcance, la posibilidad de que algo salga mal puede seguir ocupando mi atención aunque no haya información nueva ni una acción pendiente que pueda tomar en ese momento.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "EMOC-C02A",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Estabilidad Emocional",
+      "facetCode": "EE2",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando algo interrumpe inesperadamente un plan importante, suelo experimentar una reacción inicial clara de frustración o irritación.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "EMOC-C02B",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Estabilidad Emocional",
+      "facetCode": "EE2",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Incluso cuando reconozco que un problema probablemente es manejable, mi reacción emocional inicial puede ser intensa antes de comenzar a resolverlo.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "EMOC-C03A",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Estabilidad Emocional",
+      "facetCode": "EE3",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando sé que otras personas van a observar o evaluar mi desempeño en algo que considero importante, suelo experimentar tensión o incomodidad emocional aunque me haya preparado bien.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "EMOC-C03B",
+      "type": "LIKERT_5",
+      "phase": "Personalidad Profunda",
+      "domain": "Estabilidad Emocional",
+      "facetCode": "EE3",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando recibo una evaluación negativa sobre algo que hice, normalmente siento primero un impacto emocional antes de poder tomar distancia y analizar si la crítica es útil, justa o correcta.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "EMOC-H01",
+      "type": "AUDIO_ADAPTIVE",
+      "phase": "Personalidad Profunda",
+      "domain": "Estabilidad Emocional",
+      "facetCode": null,
+      "scaleCode": null,
+      "text": "Piensa en una situación reciente e importante en la que todavía no sabías cómo terminaría algo que te importaba, o apareció un obstáculo inesperado que alteró un plan. Cuéntanos brevemente:\n- ¿Qué ocurrió?\n- ¿Qué posibilidades o pensamientos aparecieron primero?\n- ¿Qué reacción emocional tuviste inicialmente y qué tan intensa fue para ti?\n- ¿Qué hiciste después?\n- Si ya habías hecho lo razonablemente posible, ¿el problema siguió ocupando tu mente aunque no hubiera información nueva ni algo adicional que pudieras hacer en ese momento?",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": "Anticipación de riesgo, reacción inicial, respuesta a interrupción y rumiación posterior.",
+      "inferenceLimit": "No inferir tolerancia al estrés, resiliencia, ansiedad clínica ni recuperación completa.",
+      "options": []
+    },
+    {
+      "code": "EMOC-H02",
+      "type": "AUDIO_ADAPTIVE",
+      "phase": "Personalidad Profunda",
+      "domain": "Estabilidad Emocional",
+      "facetCode": null,
+      "scaleCode": null,
+      "text": "Piensa en una ocasión reciente en la que otra persona evaluó, criticó o juzgó algo importante que habías hecho. Cuéntanos brevemente:\n- ¿Qué estaba siendo evaluado?\n- ¿La evaluación fue pública o privada?\n- ¿Quién realizó la evaluación y qué importancia tenía para ti su opinión?\n- ¿Cuál fue tu reacción emocional inicial?\n- ¿Qué hiciste después de esa reacción?",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": "Impacto inicial de la evaluación, importancia de la fuente y procesamiento posterior de la crítica.",
+      "inferenceLimit": "No inferir apertura general a la crítica a partir de un solo episodio o una sola clase de evaluador.",
+      "options": []
+    },
+    {
+      "code": "PAUSA-HONESTIDAD",
+      "type": "PAUSE",
+      "phase": "Transición",
+      "domain": null,
+      "facetCode": null,
+      "scaleCode": null,
+      "text": "Pasamos al último dominio de Personalidad.",
+      "preInstruction": "Las siguientes preguntas evalúan cómo manejas situaciones donde existen oportunidades de ventaja personal o reconocimiento. Sé totalmente sincero, no existen respuestas trampa.",
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "HONH-C01",
+      "type": "SCENARIO_SINGLE_CHOICE",
+      "phase": "Situaciones y Decisiones",
+      "domain": "Honestidad-Humildad",
+      "facetCode": "HH1",
+      "scaleCode": null,
+      "text": "Estás intentando obtener una oportunidad importante de una persona que podría ayudarte. Durante la conversación descubres que esa persona siente mucho entusiasmo por un tema o interés con el que tú realmente no te identificas demasiado. ¿Qué se parece más a tu tendencia natural?",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": [
+        {
+          "code": "OPT_A",
+          "text": "Muestro curiosidad genuina por su perspectiva, sin dar a entender que comparto más afinidad de la que realmente existe."
+        },
+        {
+          "code": "OPT_B",
+          "text": "Destaco los puntos de coincidencia que sí son reales y utilizo ese terreno común para fortalecer la relación."
+        },
+        {
+          "code": "OPT_C",
+          "text": "Acompaño su entusiasmo y dejo que perciba una afinidad mayor de la que realmente siento, siempre que no tenga que hacer una afirmación explícitamente falsa."
+        },
+        {
+          "code": "OPT_D",
+          "text": "Evito utilizar ese tema para crear cercanía y regreso gradualmente a la conversación profesional."
+        }
+      ]
+    },
+    {
+      "code": "HONH-C02A",
+      "type": "LIKERT_5",
+      "phase": "Situaciones y Decisiones",
+      "domain": "Honestidad-Humildad",
+      "facetCode": "HH1",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Cuando una relación profesional podía beneficiarme, he llegado a exagerar cuánto compartía el interés, entusiasmo o afinidad de la otra persona para facilitar la conexión.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "HONH-C02B",
+      "type": "LIKERT_5",
+      "phase": "Situaciones y Decisiones",
+      "domain": "Honestidad-Humildad",
+      "facetCode": "HH1",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "He dejado que alguien mantenga una impresión sobre mi interés o intención que yo sabía que era más favorable que la realidad porque corregirla podía reducir una oportunidad para mí.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "HONH-C03",
+      "type": "SCENARIO_SINGLE_CHOICE",
+      "phase": "Situaciones y Decisiones",
+      "domain": "Honestidad-Humildad",
+      "facetCode": "HH2",
+      "scaleCode": null,
+      "text": "Recibes un beneficio económico mayor al que esperabas en una transacción profesional. Al revisar la información, detectas que probablemente existe un error de la otra parte. El monto no representa una pérdida grave para esa organización y es poco probable que alguien detecte el error posteriormente. ¿Qué se parece más a lo que tenderías a hacer?",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": [
+        {
+          "code": "OPT_A",
+          "text": "Informo del posible error antes de asumir que el beneficio me corresponde."
+        },
+        {
+          "code": "OPT_B",
+          "text": "Reviso primero los términos o el acuerdo para determinar si realmente existe un error y, si confirmo que no me corresponde, lo comunico."
+        },
+        {
+          "code": "OPT_C",
+          "text": "Si la otra parte realizó el cálculo y aprobó la transacción, tiendo a considerar razonable aceptar el beneficio tal como fue procesado."
+        },
+        {
+          "code": "OPT_D",
+          "text": "Espero a ver si la otra parte detecta el problema; si lo hace posteriormente, entonces lo resolvemos."
+        }
+      ]
+    },
+    {
+      "code": "HONH-C04A",
+      "type": "LIKERT_5",
+      "phase": "Situaciones y Decisiones",
+      "domain": "Honestidad-Humildad",
+      "facetCode": "HH3",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "La posibilidad de alcanzar un nivel económico que sea claramente visible en mi estilo de vida puede ser una fuente importante de motivación para mí.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "HONH-C04B",
+      "type": "LIKERT_5",
+      "phase": "Situaciones y Decisiones",
+      "domain": "Honestidad-Humildad",
+      "facetCode": "HH3",
+      "scaleCode": "SCALE-FREQ-5",
+      "text": "Los símbolos visibles de éxito —por ejemplo, propiedades, viajes, vehículos, marcas, espacios exclusivos u otros privilegios materiales— pueden tener para mí un valor adicional porque representan lo que he conseguido.",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": []
+    },
+    {
+      "code": "HONH-C05",
+      "type": "SCENARIO_SINGLE_CHOICE",
+      "phase": "Situaciones y Decisiones",
+      "domain": "Honestidad-Humildad",
+      "facetCode": "HH4",
+      "scaleCode": null,
+      "text": "Has alcanzado una posición reconocida dentro de tu sector. En un evento comienzan a ofrecerte ciertas consideraciones especiales —por ejemplo, acceso preferente o un trato diferente— debido a tu posición. Aceptarlas no perjudica directamente a otra persona y este tipo de reconocimiento es relativamente habitual en ese entorno. ¿Qué se parece más a tu reacción natural?",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": null,
+      "inferenceLimit": null,
+      "options": [
+        {
+          "code": "OPT_A",
+          "text": "Lo considero una consecuencia natural de haber alcanzado esa posición y me resulta cómodo recibir ese tipo de trato."
+        },
+        {
+          "code": "OPT_B",
+          "text": "Puedo aceptarlo en ese contexto, pero no esperaría recibir el mismo trato especial en situaciones donde mi posición no sea relevante."
+        },
+        {
+          "code": "OPT_C",
+          "text": "Me interesa saber si existe un criterio relacionado con mi función o con la dinámica del evento; si lo hay, puedo aceptarlo sin problema."
+        },
+        {
+          "code": "OPT_D",
+          "text": "Aunque sea habitual, normalmente prefiero recibir el mismo trato general cuando no existe una razón funcional para hacer una excepción."
+        }
+      ]
+    },
+    {
+      "code": "HONH-H01",
+      "type": "AUDIO_ADAPTIVE",
+      "phase": "Situaciones y Decisiones",
+      "domain": "Honestidad-Humildad",
+      "facetCode": null,
+      "scaleCode": null,
+      "text": "Piensa en una situación real de los últimos años en la que tuvieras la posibilidad de obtener: una oportunidad, acceso, dinero, una ventaja, reconocimiento, condiciones favorables o un trato especial, y en la que obtenerlo dependiera, al menos parcialmente, de una decisión tuya. No tiene que tratarse de algo ilegal o grave. Cuéntanos brevemente:\n- ¿Qué podías obtener?\n- ¿De qué dependía conseguirlo?\n- ¿Había otra persona u organización cuyos intereses también estuvieran involucrados?\n- ¿Tuviste que decidir qué decir, qué mostrar, qué reclamar, qué aceptar o qué dejar sin aclarar?\n- ¿Qué hiciste finalmente?\n- ¿Qué factor tuvo más peso en tu decisión?\n- ¿Hubo algo que decidiste no hacer aunque pudiera haberte beneficiado?",
+      "preInstruction": null,
+      "polarity": null,
+      "followUps": null,
+      "evidencePreserves": "Manejo de impresiones, uso de ventajas/contactos, límites personales y toma de decisiones cuando existe beneficio propio.",
+      "inferenceLimit": "No emitir juicios morales globales ni inferir integridad alta/baja a partir de un solo ejemplo.",
+      "options": []
+    }
+  ]
+}

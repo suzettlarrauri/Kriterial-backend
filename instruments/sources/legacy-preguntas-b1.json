@@ -1,0 +1,644 @@
+[
+  {
+    "id": "B1-INICIO",
+    "fase": "Arquitectura Personal 360°",
+    "rol": "CORE",
+    "tipo": "pausa_descanso",
+    "texto": "Bienvenido a la Evaluación (Bloque 1).",
+    "instrucciones": "Responde pensando en cómo sueles actuar realmente en trabajo, estudios, proyectos personales o responsabilidades importantes. No respondas según cómo crees que deberías actuar. No existen respuestas 'mejores' o 'peores'."
+  },
+  {
+    "id": "RESP-C01A",
+    "fase": "Personalidad Profunda",
+    "dominio": "Responsabilidad",
+    "constructo": "R1",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando tengo varias responsabilidades importantes al mismo tiempo, suelo sentirme más cómodo si establezco algún orden o estructura para atenderlas."
+  },
+  {
+    "id": "RESP-C01B",
+    "fase": "Personalidad Profunda",
+    "dominio": "Responsabilidad",
+    "constructo": "R1",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Si tengo claro el resultado que debo conseguir, me siento cómodo empezando aunque todavía no haya definido el orden o el proceso que seguiré."
+  },
+  {
+    "id": "RESP-C02A",
+    "fase": "Personalidad Profunda",
+    "dominio": "Responsabilidad",
+    "constructo": "R2",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando una tarea importante depende principalmente de mí y nadie está supervisándome, suelo iniciarla con tiempo suficiente sin necesitar presión de último momento."
+  },
+  {
+    "id": "RESP-C02B",
+    "fase": "Personalidad Profunda",
+    "dominio": "Responsabilidad",
+    "constructo": "R2",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando una tarea importante deja de ser interesante y nadie está supervisándome, me cuesta mantener un ritmo constante hasta terminarla o cerrarla de forma consciente."
+  },
+  {
+    "id": "RESP-C03A",
+    "fase": "Personalidad Profunda",
+    "dominio": "Responsabilidad",
+    "constructo": "R3",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "En proyectos que considero importantes, suelo proponerme objetivos que me exigen mejorar respecto a lo que ya sé o hago."
+  },
+  {
+    "id": "RESP-C03B",
+    "fase": "Personalidad Profunda",
+    "dominio": "Responsabilidad",
+    "constructo": "R3",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando algo ya cumple correctamente con lo esperado, normalmente no siento una necesidad personal de elevar el estándar para la próxima vez."
+  },
+  {
+    "id": "RESP-C04A",
+    "fase": "Personalidad Profunda",
+    "dominio": "Responsabilidad",
+    "constructo": "R4",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando acepto voluntariamente un compromiso con otra persona, lo considero vigente hasta cumplirlo o renegociarlo explícitamente."
+  },
+  {
+    "id": "RESP-C04B",
+    "fase": "Personalidad Profunda",
+    "dominio": "Responsabilidad",
+    "constructo": "R4",
+    "tipo": "SCENARIO_SINGLE_CHOICE",
+    "texto": "Aceptaste entregar algo importante el viernes. El miércoles aparece una oportunidad inesperada y muy valiosa que requiere gran parte del tiempo que habías reservado. No puedes atender ambas cosas exactamente como estaban planeadas. ¿Qué se parece más a lo que tenderías a hacer?",
+    "opciones": [
+      { "option_id": "OPT_A", "texto": "Mantengo el compromiso original aunque tenga que dejar pasar la nueva oportunidad." },
+      { "option_id": "OPT_B", "texto": "Antes de cambiar el compromiso, hablo con la otra persona e intento acordar una nueva condición o fecha." },
+      { "option_id": "OPT_C", "texto": "Priorizo la nueva oportunidad y aviso del cambio, confiando en compensar después el incumplimiento." },
+      { "option_id": "OPT_D", "texto": "Intento hacer ambas cosas aunque exista un riesgo importante de entregar tarde o con menor calidad." }
+    ]
+  },
+  {
+    "id": "RESP-C05A",
+    "fase": "Personalidad Profunda",
+    "dominio": "Responsabilidad",
+    "constructo": "R5",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Antes de tomar una decisión importante, suelo detenerme a considerar algunas consecuencias y alternativas antes de actuar."
+  },
+  {
+    "id": "RESP-C05B",
+    "fase": "Personalidad Profunda",
+    "dominio": "Responsabilidad",
+    "constructo": "R5",
+    "tipo": "SCENARIO_SINGLE_CHOICE",
+    "texto": "Aparece una oportunidad atractiva y tienes 24 horas para decidir. Ya conoces lo esencial, pero faltan algunos datos que podrían cambiar las consecuencias de tu decisión. ¿Qué se parece más a tu tendencia natural?",
+    "opciones": [
+      { "option_id": "OPT_A", "texto": "Decido relativamente pronto con la información disponible y ajusto después si aparece algo nuevo." },
+      { "option_id": "OPT_B", "texto": "Hago una pausa, identifico las consecuencias principales y aclaro solo la información que podría cambiar mi decisión." },
+      { "option_id": "OPT_C", "texto": "Intento reunir toda la información posible antes de decidir, aunque eso reduzca considerablemente el tiempo restante." },
+      { "option_id": "OPT_D", "texto": "Prefiero posponer la decisión hasta sentirme muy seguro, aunque exista la posibilidad de perder la oportunidad." }
+    ]
+  },
+  {
+    "id": "RESP-H01",
+    "fase": "Personalidad Profunda",
+    "dominio": "Responsabilidad",
+    "tipo": "audio_adaptativo",
+    "instruccion_previa": "Cuéntalo como se lo contarías a una persona de confianza. No hay una respuesta correcta. Empieza por lo que pasó; si necesitamos algún detalle más, te lo preguntaremos después.",
+    "texto": "Cuéntame de una ocasión reciente en la que tenías que sacar adelante algo importante casi por tu cuenta. ¿Qué era y qué hiciste desde que empezaste hasta que terminó?",
+    "seguimientos": [
+      "¿Cómo te organizaste cuando empezaste?",
+      "Cuando se complicó o te dieron menos ganas de seguir, ¿qué hiciste?",
+      "¿Recuerdas una decisión importante que tomaste en ese proyecto? ¿Qué decidiste y por qué?",
+      "Si había una fecha o alguien esperando algo de ti: ¿cómo lo manejaste?"
+    ],
+    "evidencia_preserva": "Auto-estructuración, inicio autónomo, continuidad cuando baja el interés, respuesta a presión/compromisos y estilo de decisión.",
+    "limite_inferencia": "No inferir capacidad de ejecución, disciplina, liderazgo ni resultados si la persona no los describe."
+  },
+  {
+    "id": "PAUSA-APERTURA",
+    "fase": "Transición",
+    "rol": "CORE",
+    "tipo": "pausa_descanso",
+    "texto": "¡Excelente! Hemos completado el primer dominio.",
+    "instrucciones": "A continuación exploraremos cómo te relacionas con la novedad, el aprendizaje y las ideas. Algunas personas disfrutan explorar constantemente y otras prefieren profundizar en lo conocido. Haz clic en Continuar cuando estés listo."
+  },
+  {
+    "id": "APER-C01A",
+    "fase": "Personalidad Profunda",
+    "dominio": "Apertura",
+    "constructo": "O1",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando un tema despierta genuinamente mi interés, suelo buscar entenderlo con mayor profundidad aunque esa información no sea necesaria para resolver algo inmediato."
+  },
+  {
+    "id": "APER-C01B",
+    "fase": "Personalidad Profunda",
+    "dominio": "Apertura",
+    "constructo": "O1",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando ya entiendo lo suficiente de un tema para resolver lo que necesito, normalmente dejo de explorarlo aunque todavía haya cosas interesantes por descubrir."
+  },
+  {
+    "id": "APER-C02A",
+    "fase": "Personalidad Profunda",
+    "dominio": "Apertura",
+    "constructo": "O2",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Aunque una forma conocida de hacer algo funcione bien, me resulta interesante probar ocasionalmente una alternativa simplemente para conocer cómo funciona."
+  },
+  {
+    "id": "APER-C02B",
+    "fase": "Personalidad Profunda",
+    "dominio": "Apertura",
+    "constructo": "O2",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando llevo bastante tiempo haciendo una actividad de la misma manera, normalmente prefiero mantener el método conocido mientras siga funcionando correctamente."
+  },
+  {
+    "id": "APER-C03A",
+    "fase": "Personalidad Profunda",
+    "dominio": "Apertura",
+    "constructo": "O3",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando pienso en una idea, proyecto o situación todavía no definida por completo, suelo imaginar espontáneamente varias formas en que podría desarrollarse."
+  },
+  {
+    "id": "APER-C03B",
+    "fase": "Personalidad Profunda",
+    "dominio": "Apertura",
+    "constructo": "O3",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando alguien me presenta una idea apenas iniciada, me resulta natural imaginar usos, versiones o posibilidades que todavía no se han planteado explícitamente."
+  },
+  {
+    "id": "APER-C04A",
+    "fase": "Personalidad Profunda",
+    "dominio": "Apertura",
+    "constructo": "O4",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Suelo notar características como iluminación, sonido, distribución, presentación, textura o atmósfera cuando experimento un lugar, producto o actividad."
+  },
+  {
+    "id": "APER-C04B",
+    "fase": "Personalidad Profunda",
+    "dominio": "Apertura",
+    "constructo": "O4",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "La forma en que una experiencia se ve, se siente o se presenta puede influir considerablemente en cómo la vivo, aun cuando su función práctica sea la misma."
+  },
+  {
+    "id": "APER-H01",
+    "fase": "Personalidad Profunda",
+    "dominio": "Apertura",
+    "tipo": "audio_adaptativo",
+    "instruccion_previa": "Cuéntalo como se lo contarías a una persona de confianza. No hay una respuesta correcta. Empieza por lo que pasó; si necesitamos algún detalle más, te lo preguntaremos después.",
+    "texto": "Cuéntame de algo que te dio mucha curiosidad y que decidiste investigar o probar por tu cuenta, aunque nadie te lo pidiera. ¿Qué hiciste?",
+    "seguimientos": [
+      "¿Qué fue lo que te dio curiosidad?",
+      "¿Te quedaste con lo primero que encontraste o seguiste buscando o probando más cosas?",
+      "Mientras lo explorabas, ¿se te ocurrieron nuevas ideas o posibilidades?"
+    ],
+    "evidencia_preserva": "Profundidad de exploración, persistencia de curiosidad, variación de método e ideación.",
+    "limite_inferencia": "No convertir interés declarado en creatividad aplicada si no hay acciones o resultados."
+  },
+  {
+    "id": "APER-H02",
+    "fase": "Personalidad Profunda",
+    "dominio": "Apertura",
+    "tipo": "audio_adaptativo",
+    "instruccion_previa": "Cuéntalo como se lo contarías a una persona de confianza. No hay una respuesta correcta. Empieza por lo que pasó; si necesitamos algún detalle más, te lo preguntaremos después.",
+    "texto": "Cuéntame de un lugar, producto o experiencia que recuerdes por cómo se veía, sonaba o se sentía. ¿Qué fue lo primero que notaste?",
+    "seguimientos": [
+      "¿Qué detalle te llamó más la atención?",
+      "¿Ese detalle cambió de alguna manera cómo viviste la experiencia?",
+      "¿Por qué crees que ese detalle tuvo importancia para ti?"
+    ],
+    "evidencia_preserva": "Sensibilidad a presentación, atmósfera y detalles sensoriales.",
+    "limite_inferencia": "No inferir precisión administrativa, atención operativa al detalle o perfeccionismo."
+  },
+  {
+    "id": "PAUSA-EXTRAVERSION",
+    "fase": "Transición",
+    "rol": "CORE",
+    "tipo": "pausa_descanso",
+    "texto": "Dominio completado con éxito.",
+    "instrucciones": "Ahora pasaremos a la Extraversión. Responde pensando en cómo sueles funcionar naturalmente, no en lo que tu trabajo te obliga a hacer. Una persona puede ser reservada y muy competente socialmente, o sociable sin disfrutar dirigir. Haz clic en Continuar."
+  },
+  {
+    "id": "EXTR-C01A",
+    "fase": "Personalidad Profunda",
+    "dominio": "Extraversión",
+    "constructo": "E1",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando paso bastante tiempo con poca interacción con otras personas, normalmente empiezo a echar de menos el contacto social y busco retomarlo."
+  },
+  {
+    "id": "EXTR-C01B",
+    "fase": "Personalidad Profunda",
+    "dominio": "Extraversión",
+    "constructo": "E1",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando estoy en un entorno donde conozco a pocas personas, suelo sentir inclinación a acercarme, conversar o integrarme sin necesitar que alguien me incluya primero."
+  },
+  {
+    "id": "EXTR-C02A",
+    "fase": "Personalidad Profunda",
+    "dominio": "Extraversión",
+    "constructo": "E2",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando considero que mi opinión es relevante, suelo expresarla aunque sea diferente a la de otras personas presentes."
+  },
+  {
+    "id": "EXTR-C02B",
+    "fase": "Personalidad Profunda",
+    "dominio": "Extraversión",
+    "constructo": "E2",
+    "tipo": "SCENARIO_SINGLE_CHOICE",
+    "texto": "En una reunión, el grupo parece dispuesto a seguir una decisión, pero tú consideras que hay un aspecto importante que todavía no se ha discutido. ¿Qué se parece más a tu tendencia habitual?",
+    "opciones": [
+      { "option_id": "OPT_A", "texto": "Expreso directamente mi preocupación y explico por qué considero que debe discutirse." },
+      { "option_id": "OPT_B", "texto": "Planteo una pregunta que lleve al grupo a revisar ese aspecto antes de continuar." },
+      { "option_id": "OPT_C", "texto": "Espero a que alguien solicite mi opinión o a que el tema vuelva a surgir." },
+      { "option_id": "OPT_D", "texto": "Prefiero comentarlo después de la reunión con alguna persona involucrada." }
+    ]
+  },
+  {
+    "id": "EXTR-C03A",
+    "fase": "Personalidad Profunda",
+    "dominio": "Extraversión",
+    "constructo": "E3",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Me siento más cómodo cuando mi día mantiene un ritmo activo durante buena parte del tiempo que cuando contiene largos periodos con muy poca actividad."
+  },
+  {
+    "id": "EXTR-C03B",
+    "fase": "Personalidad Profunda",
+    "dominio": "Extraversión",
+    "constructo": "E3",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Incluso en días sin mucha presión externa, tiendo naturalmente a mantenerme haciendo cosas en lugar de pasar largos periodos sin actividad."
+  },
+  {
+    "id": "EXTR-C04A",
+    "fase": "Personalidad Profunda",
+    "dominio": "Extraversión",
+    "constructo": "E4",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Me atraen los ambientes o situaciones donde hay bastante intensidad, movimiento o sensación de que están ocurriendo muchas cosas, aunque la actividad en sí no sea nueva."
+  },
+  {
+    "id": "EXTR-C04B",
+    "fase": "Personalidad Profunda",
+    "dominio": "Extraversión",
+    "constructo": "E4",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Después de bastante tiempo en un ambiente tranquilo, estable y de baja intensidad, suelo empezar a sentir que necesito algo más estimulante aunque todo esté funcionando correctamente."
+  },
+  {
+    "id": "EXTR-C05A",
+    "fase": "Personalidad Profunda",
+    "dominio": "Extraversión",
+    "constructo": "E5",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando aparece una oportunidad que me resulta atractiva, suelo experimentar rápidamente entusiasmo o energía positiva, aun antes de saber si finalmente la aprovecharé."
+  },
+  {
+    "id": "EXTR-C05B",
+    "fase": "Personalidad Profunda",
+    "dominio": "Extraversión",
+    "constructo": "E5",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Incluso cuando algo me entusiasma mucho por dentro, mi reacción exterior suele mantenerse bastante contenida."
+  },
+  {
+    "id": "EXTR-H01",
+    "fase": "Personalidad Profunda",
+    "dominio": "Extraversión",
+    "tipo": "audio_adaptativo",
+    "instruccion_previa": "Cuéntalo como se lo contarías a una persona de confianza. No hay una respuesta correcta. Empieza por lo que pasó; si necesitamos algún detalle más, te lo preguntaremos después.",
+    "texto": "Piensa en un evento, reunión o lugar reciente donde había personas que no conocías bien. Cuéntame qué hiciste desde que llegaste.",
+    "seguimientos": [
+      "¿Tú empezaste a hablar con otras personas o esperaste a que ellas se acercaran?",
+      "Cuando querías decir algo importante, ¿cómo lo decías?",
+      "¿Cómo era el ritmo del lugar: tranquilo o con mucho movimiento? ¿Cómo te sentías con ese ritmo?",
+      "Si el ambiente se quedaba tranquilo por bastante tiempo, ¿qué solías hacer?"
+    ],
+    "evidencia_preserva": "Iniciativa social, necesidad de contacto, asertividad, actividad y búsqueda de estimulación.",
+    "limite_inferencia": "No inferir extraversión global, liderazgo, habilidad comercial ni nivel de idioma."
+  },
+  {
+    "id": "PAUSA-AMABILIDAD",
+    "fase": "Transición",
+    "rol": "CORE",
+    "tipo": "pausa_descanso",
+    "texto": "Ya hemos recorrido la mitad de este módulo.",
+    "instrucciones": "A continuación evaluaremos la 'Amabilidad'. Responde pensando en cómo tiendes a actuar realmente cuando tus decisiones interactúan con las de otras personas. Considerar a otros no significa ceder siempre."
+  },
+  {
+    "id": "AMAB-C01A",
+    "fase": "Personalidad Profunda",
+    "dominio": "Amabilidad",
+    "constructo": "A1",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando una decisión mía puede afectar negativamente a otra persona, suelo considerar espontáneamente ese impacto antes de decidir qué hacer."
+  },
+  {
+    "id": "AMAB-C01B",
+    "fase": "Personalidad Profunda",
+    "dominio": "Amabilidad",
+    "constructo": "A1",
+    "tipo": "SCENARIO_SINGLE_CHOICE",
+    "texto": "Una persona con la que trabajas atraviesa una dificultad personal y te pide ayuda con una tarea que le corresponde. Ayudarla requeriría parte de tu tiempo, pero no pondría en riesgo una obligación importante. ¿Qué se parece más a tu tendencia natural?",
+    "opciones": [
+      { "option_id": "OPT_A", "texto": "Intento ayudar de alguna manera, aunque implique hacer un ajuste razonable en mi tiempo." },
+      { "option_id": "OPT_B", "texto": "Primero evalúo cuánto apoyo necesita y hasta dónde puedo ayudar sin asumir su responsabilidad completa." },
+      { "option_id": "OPT_C", "texto": "Normalmente prefiero no involucrarme si la responsabilidad le corresponde exclusivamente a la otra persona." },
+      { "option_id": "OPT_D", "texto": "Tiendo a asumir una parte muy grande o incluso toda la tarea para reducirle la carga." }
+    ]
+  },
+  {
+    "id": "AMAB-C02A",
+    "fase": "Personalidad Profunda",
+    "dominio": "Amabilidad",
+    "constructo": "A2",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando existe un desacuerdo importante, suelo intentar comprender qué necesita o defiende la otra parte antes de decidir cómo responder."
+  },
+  {
+    "id": "AMAB-C02B",
+    "fase": "Personalidad Profunda",
+    "dominio": "Amabilidad",
+    "constructo": "A2",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando creo firmemente que mi posición es correcta, puedo seguir buscando una solución conjunta sin sentir que por hacerlo estoy renunciando necesariamente a mi postura."
+  },
+  {
+    "id": "AMAB-C03",
+    "fase": "Personalidad Profunda",
+    "dominio": "Amabilidad",
+    "constructo": "A2",
+    "tipo": "SCENARIO_SINGLE_CHOICE",
+    "texto": "Tú y otra persona deben tomar juntos una decisión importante. Ambos tienen razones legítimas, sus preferencias son diferentes y ninguna alternativa satisface completamente a los dos. ¿Qué se parece más a tu tendencia habitual?",
+    "opciones": [
+      { "option_id": "OPT_A", "texto": "Expongo mi posición y busco una alternativa que conserve los intereses que considero importantes para ambas partes." },
+      { "option_id": "OPT_B", "texto": "Intento que la otra persona adopte mi alternativa mientras siga pensando que es claramente la mejor." },
+      { "option_id": "OPT_C", "texto": "Tiendo a ceder parte de lo que quería principalmente para reducir la tensión entre nosotros." },
+      { "option_id": "OPT_D", "texto": "Prefiero mantener mi posición y posponer la decisión mientras no exista una razón suficiente para modificarla." }
+    ]
+  },
+  {
+    "id": "AMAB-C04A",
+    "fase": "Personalidad Profunda",
+    "dominio": "Amabilidad",
+    "constructo": "A3",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando conozco a una persona y todavía tengo poca información sobre ella, normalmente parto concediéndole cierto crédito de buena intención mientras no aparezcan señales claras en contrario."
+  },
+  {
+    "id": "AMAB-C04B",
+    "fase": "Personalidad Profunda",
+    "dominio": "Amabilidad",
+    "constructo": "A3",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando comienzo a colaborar con alguien nuevo en algo de consecuencias limitadas y reversibles, me resulta natural darle un margen razonable de confianza inicial."
+  },
+  {
+    "id": "AMAB-H01",
+    "fase": "Personalidad Profunda",
+    "dominio": "Amabilidad",
+    "tipo": "audio_adaptativo",
+    "instruccion_previa": "Cuéntalo como se lo contarías a una persona de confianza. No hay una respuesta correcta. Empieza por lo que pasó; si necesitamos algún detalle más, te lo preguntaremos después.",
+    "texto": "Cuéntame de una vez en que tú y otra persona querían cosas diferentes y tenían que ponerse de acuerdo o seguir trabajando juntos. ¿Qué pasó y qué hiciste?",
+    "seguimientos": [
+      "¿Qué querías tú y qué quería la otra persona?",
+      "¿Cambiaste algo de tu posición o la mantuviste? ¿Por qué?",
+      "Al principio, ¿qué tanta confianza le diste a la otra persona y por qué?"
+    ],
+    "evidencia_preserva": "Consideración interpersonal, integración en desacuerdo, firmeza, límites y confianza inicial.",
+    "limite_inferencia": "No inferir capacidad de negociación, delegación o liderazgo."
+  },
+  {
+    "id": "PAUSA-EMOCIONAL",
+    "fase": "Transición",
+    "rol": "CORE",
+    "tipo": "pausa_descanso",
+    "texto": "¡Muy bien! Acabamos de terminar el bloque de interacciones sociales.",
+    "instrucciones": "Las siguientes preguntas exploran tus reacciones emocionales iniciales ante incertidumbre y evaluación. No buscamos determinar si son 'correctas' o 'incorrectas'."
+  },
+  {
+    "id": "EMOC-C01A",
+    "fase": "Personalidad Profunda",
+    "dominio": "Estabilidad Emocional",
+    "constructo": "EE1",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando una situación importante todavía es incierta, la posibilidad de que algo salga mal suele aparecer rápidamente en mi mente y generar cierta preocupación o tensión, aun cuando también existan resultados favorables posibles."
+  },
+  {
+    "id": "EMOC-C01B",
+    "fase": "Personalidad Profunda",
+    "dominio": "Estabilidad Emocional",
+    "constructo": "EE1",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Después de haber pensado en los riesgos y realizado las acciones razonables que están a mi alcance, la posibilidad de que algo salga mal puede seguir ocupando mi atención aunque no haya información nueva ni una acción pendiente que pueda tomar en ese momento."
+  },
+  {
+    "id": "EMOC-C02A",
+    "fase": "Personalidad Profunda",
+    "dominio": "Estabilidad Emocional",
+    "constructo": "EE2",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando algo interrumpe inesperadamente un plan importante, suelo experimentar una reacción inicial clara de frustración o irritación."
+  },
+  {
+    "id": "EMOC-C02B",
+    "fase": "Personalidad Profunda",
+    "dominio": "Estabilidad Emocional",
+    "constructo": "EE2",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Incluso cuando reconozco que un problema probablemente es manejable, mi reacción emocional inicial puede ser intensa antes de comenzar a resolverlo."
+  },
+  {
+    "id": "EMOC-C03A",
+    "fase": "Personalidad Profunda",
+    "dominio": "Estabilidad Emocional",
+    "constructo": "EE3",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando sé que otras personas van a observar o evaluar mi desempeño en algo que considero importante, suelo experimentar tensión o incomodidad emocional aunque me haya preparado bien."
+  },
+  {
+    "id": "EMOC-C03B",
+    "fase": "Personalidad Profunda",
+    "dominio": "Estabilidad Emocional",
+    "constructo": "EE3",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando recibo una evaluación negativa sobre algo que hice, normalmente siento primero un impacto emocional antes de poder tomar distancia y analizar si la crítica es útil, justa o correcta."
+  },
+  {
+    "id": "EMOC-H01",
+    "fase": "Personalidad Profunda",
+    "dominio": "Estabilidad Emocional",
+    "tipo": "audio_adaptativo",
+    "instruccion_previa": "Cuéntalo como se lo contarías a una persona de confianza. No hay una respuesta correcta. Empieza por lo que pasó; si necesitamos algún detalle más, te lo preguntaremos después.",
+    "texto": "Cuéntame de una vez en que algo importante se complicó de repente y no sabías cómo iba a terminar. ¿Qué pasó?",
+    "seguimientos": [
+      "¿Qué sentiste o pensaste primero?",
+      "¿Qué hiciste después?",
+      "Cuando ya habías hecho lo que podías, ¿seguías pensando en el problema o pudiste dejarlo por un rato?"
+    ],
+    "evidencia_preserva": "Anticipación de riesgo, reacción inicial, respuesta a interrupción y rumiación posterior.",
+    "limite_inferencia": "No inferir tolerancia al estrés, resiliencia, ansiedad clínica ni recuperación completa."
+  },
+  {
+    "id": "EMOC-H02",
+    "fase": "Personalidad Profunda",
+    "dominio": "Estabilidad Emocional",
+    "tipo": "audio_adaptativo",
+    "instruccion_previa": "Cuéntalo como se lo contarías a una persona de confianza. No hay una respuesta correcta. Empieza por lo que pasó; si necesitamos algún detalle más, te lo preguntaremos después.",
+    "texto": "Cuéntame de una vez reciente en que alguien te dijo que algo que hiciste estaba mal o podía mejorar. ¿Qué pasó?",
+    "seguimientos": [
+      "¿Quién te lo dijo y qué tan importante era para ti su opinión?",
+      "¿Qué sentiste o pensaste al principio?",
+      "¿Qué hiciste después con lo que te dijeron?"
+    ],
+    "evidencia_preserva": "Impacto inicial de la evaluación, importancia de la fuente y procesamiento posterior de la crítica.",
+    "limite_inferencia": "No inferir apertura general a la crítica a partir de un solo episodio o una sola clase de evaluador."
+  },
+  {
+    "id": "PAUSA-HONESTIDAD",
+    "fase": "Transición",
+    "rol": "CORE",
+    "tipo": "pausa_descanso",
+    "texto": "Pasamos al último dominio de Personalidad.",
+    "instrucciones": "Las siguientes preguntas evalúan cómo manejas situaciones donde existen oportunidades de ventaja personal o reconocimiento. Sé totalmente sincero, no existen respuestas trampa."
+  },
+  {
+    "id": "HONH-C01",
+    "fase": "Situaciones y Decisiones",
+    "dominio": "Honestidad-Humildad",
+    "constructo": "HH1",
+    "tipo": "SCENARIO_SINGLE_CHOICE",
+    "texto": "Estás intentando obtener una oportunidad importante de una persona que podría ayudarte. Durante la conversación descubres que esa persona siente mucho entusiasmo por un tema o interés con el que tú realmente no te identificas demasiado. ¿Qué se parece más a tu tendencia natural?",
+    "opciones": [
+      { "option_id": "OPT_A", "texto": "Muestro curiosidad genuina por su perspectiva, sin dar a entender que comparto más afinidad de la que realmente existe." },
+      { "option_id": "OPT_B", "texto": "Destaco los puntos de coincidencia que sí son reales y utilizo ese terreno común para fortalecer la relación." },
+      { "option_id": "OPT_C", "texto": "Acompaño su entusiasmo y dejo que perciba una afinidad mayor de la que realmente siento, siempre que no tenga que hacer una afirmación explícitamente falsa." },
+      { "option_id": "OPT_D", "texto": "Evito utilizar ese tema para crear cercanía y regreso gradualmente a la conversación profesional." }
+    ]
+  },
+  {
+    "id": "HONH-C02A",
+    "fase": "Situaciones y Decisiones",
+    "dominio": "Honestidad-Humildad",
+    "constructo": "HH1",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Cuando una relación profesional podía beneficiarme, he llegado a exagerar cuánto compartía el interés, entusiasmo o afinidad de la otra persona para facilitar la conexión."
+  },
+  {
+    "id": "HONH-C02B",
+    "fase": "Situaciones y Decisiones",
+    "dominio": "Honestidad-Humildad",
+    "constructo": "HH1",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "He dejado que alguien mantenga una impresión sobre mi interés o intención que yo sabía que era más favorable que la realidad porque corregirla podía reducir una oportunidad para mí."
+  },
+  {
+    "id": "HONH-C03",
+    "fase": "Situaciones y Decisiones",
+    "dominio": "Honestidad-Humildad",
+    "constructo": "HH2",
+    "tipo": "SCENARIO_SINGLE_CHOICE",
+    "texto": "Recibes un beneficio económico mayor al que esperabas en una transacción profesional. Al revisar la información, detectas que probablemente existe un error de la otra parte. El monto no representa una pérdida grave para esa organización y es poco probable que alguien detecte el error posteriormente. ¿Qué se parece más a lo que tenderías a hacer?",
+    "opciones": [
+      { "option_id": "OPT_A", "texto": "Informo del posible error antes de asumir que el beneficio me corresponde." },
+      { "option_id": "OPT_B", "texto": "Reviso primero los términos o el acuerdo para determinar si realmente existe un error y, si confirmo que no me corresponde, lo comunico." },
+      { "option_id": "OPT_C", "texto": "Si la otra parte realizó el cálculo y aprobó la transacción, tiendo a considerar razonable aceptar el beneficio tal como fue procesado." },
+      { "option_id": "OPT_D", "texto": "Espero a ver si la otra parte detecta el problema; si lo hace posteriormente, entonces lo resolvemos." }
+    ]
+  },
+  {
+    "id": "HONH-C04A",
+    "fase": "Situaciones y Decisiones",
+    "dominio": "Honestidad-Humildad",
+    "constructo": "HH3",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "La posibilidad de alcanzar un nivel económico que sea claramente visible en mi estilo de vida puede ser una fuente importante de motivación para mí."
+  },
+  {
+    "id": "HONH-C04B",
+    "fase": "Situaciones y Decisiones",
+    "dominio": "Honestidad-Humildad",
+    "constructo": "HH3",
+    "tipo": "LIKERT_5",
+    "escala": "SCALE-FREQ-5",
+    "texto": "Los símbolos visibles de éxito —por ejemplo, propiedades, viajes, vehículos, marcas, espacios exclusivos u otros privilegios materiales— pueden tener para mí un valor adicional porque representan lo que he conseguido."
+  },
+  {
+    "id": "HONH-C05",
+    "fase": "Situaciones y Decisiones",
+    "dominio": "Honestidad-Humildad",
+    "constructo": "HH4",
+    "tipo": "SCENARIO_SINGLE_CHOICE",
+    "texto": "Has alcanzado una posición reconocida dentro de tu sector. En un evento comienzan a ofrecerte ciertas consideraciones especiales —por ejemplo, acceso preferente o un trato diferente— debido a tu posición. Aceptarlas no perjudica directamente a otra persona y este tipo de reconocimiento es relativamente habitual en ese entorno. ¿Qué se parece más a tu reacción natural?",
+    "opciones": [
+      { "option_id": "OPT_A", "texto": "Lo considero una consecuencia natural de haber alcanzado esa posición y me resulta cómodo recibir ese tipo de trato." },
+      { "option_id": "OPT_B", "texto": "Puedo aceptarlo en ese contexto, pero no esperaría recibir el mismo trato especial en situaciones donde mi posición no sea relevante." },
+      { "option_id": "OPT_C", "texto": "Me interesa saber si existe un criterio relacionado con mi función o con la dinámica del evento; si lo hay, puedo aceptarlo sin problema." },
+      { "option_id": "OPT_D", "texto": "Aunque sea habitual, normalmente prefiero recibir el mismo trato general cuando no existe una razón funcional para hacer una excepción." }
+    ]
+  },
+  {
+    "id": "HONH-H01",
+    "fase": "Situaciones y Decisiones",
+    "dominio": "Honestidad-Humildad",
+    "tipo": "audio_adaptativo",
+    "instruccion_previa": "Cuéntalo como se lo contarías a una persona de confianza. No hay una respuesta correcta. Empieza por lo que pasó; si necesitamos algún detalle más, te lo preguntaremos después.",
+    "texto": "Cuéntame de una vez en que podías obtener una ventaja, dinero, un trato especial o una oportunidad y dependía de ti decidir qué hacer. ¿Qué pasó y qué hiciste?",
+    "seguimientos": [
+      "¿Había algo que podías decir, aceptar, callar o usar a tu favor?",
+      "¿Qué fue lo que más pesó en tu decisión?",
+      "¿Hubo algo que decidiste no hacer aunque te hubiera beneficiado? ¿Por qué?"
+    ],
+    "evidencia_preserva": "Manejo de impresiones, uso de ventajas/contactos, límites personales y toma de decisiones cuando existe beneficio propio.",
+    "limite_inferencia": "No emitir juicios morales globales ni inferir integridad alta/baja a partir de un solo ejemplo."
+  }
+]

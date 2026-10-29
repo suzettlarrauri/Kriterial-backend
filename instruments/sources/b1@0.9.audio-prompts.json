@@ -1,0 +1,86 @@
+{
+  "description": "Enunciados de las preguntas de audio de la versión b1@0.9 (preguntas largas con subpreguntas mostradas a la vez, sin seguimientos adaptativos). Extraídos de la exportación del caso de referencia #1; contiene solo enunciados, ninguna respuesta.",
+  "questions": {
+    "RESP-H01": {
+      "text": "Piensa en una responsabilidad, proyecto o actividad importante que haya durado varias semanas y en la que una parte importante del avance dependiera de ti, con poca supervisión directa. Cuéntanos brevemente:",
+      "subQuestions": [
+        "¿Qué necesitabas conseguir?",
+        "¿Cómo organizaste o comenzaste el trabajo?",
+        "¿Qué ocurrió cuando aparecieron otras prioridades, disminuyó el entusiasmo inicial o surgieron dificultades?",
+        "¿Había fechas, compromisos o personas que dependieran de ti? ¿Cómo los manejaste?",
+        "Describe una decisión importante dentro de ese proyecto: ¿actuaste rápidamente o te detuviste a pensar antes de hacerlo? ¿Qué hiciste?"
+      ]
+    },
+    "APER-H01": {
+      "text": "Piensa en una ocasión de los últimos años en la que, sin que fuera estrictamente necesario, decidiste explorar con mayor profundidad un tema, una idea o una forma diferente de hacer algo. Cuéntanos brevemente:",
+      "subQuestions": [
+        "¿Qué despertó tu interés?",
+        "¿Qué decidiste investigar, experimentar o explorar?",
+        "¿Qué hiciste concretamente?",
+        "¿Hasta dónde quisiste profundizar?",
+        "¿Aparecieron nuevas posibilidades o maneras de entender el tema mientras lo explorabas?"
+      ]
+    },
+    "APER-H02": {
+      "text": "Piensa en un lugar, espacio, producto, experiencia, presentación, diseño, ambiente u otra situación que hayas vivido y cuyos detalles hayan llamado especialmente tu atención.",
+      "subQuestions": [
+        "¿Qué elementos específicos notaste?",
+        "¿Qué efecto tuvieron en tu experiencia?",
+        "¿Hubo algún detalle que para otras personas pudiera parecer poco importante pero para ti tuviera peso?"
+      ]
+    },
+    "EXTR-H01": {
+      "text": "Piensa en una jornada, proyecto, evento o periodo reciente en el que hayas tenido bastante libertad para decidir cómo involucrarte y a qué ritmo hacerlo. Descríbelo brevemente:",
+      "subQuestions": [
+        "¿Cuánta interacción con otras personas buscaste espontáneamente?",
+        "Si estabas con personas que conocías poco, ¿tendías a acercarte o esperabas a que otros iniciaran?",
+        "Cuando tenías algo importante que decir, ¿cómo tendías a expresarlo?",
+        "¿Qué ritmo de actividad te resultaba más natural?",
+        "¿Qué ocurría cuando el ambiente permanecía tranquilo o con poca estimulación durante bastante tiempo?",
+        "Si aparecía algo que te parecía especialmente interesante o prometedor, ¿cuál solía ser tu reacción inicial?"
+      ]
+    },
+    "AMAB-H01": {
+      "text": "Piensa en una situación reciente en la que tus intereses o necesidades fueran diferentes de los de otra persona y tuvieran que tomar una decisión, resolver un problema o trabajar juntos. Cuéntanos brevemente:",
+      "subQuestions": [
+        "¿Qué necesitabas o querías tú?",
+        "¿Qué entendías que necesitaba o quería la otra persona?",
+        "¿Cómo manejaste la diferencia?",
+        "¿Hubo algo que defendiste, algo que modificaste o algún límite que estableciste?",
+        "Antes de tener suficiente evidencia sobre cómo actuaría la otra persona, ¿qué nivel de confianza inicial le concediste y por qué?"
+      ]
+    },
+    "EMOC-H01": {
+      "text": "Piensa en una situación reciente e importante en la que todavía no sabías cómo terminaría algo que te importaba, o apareció un obstáculo inesperado que alteró un plan. Cuéntanos brevemente:",
+      "subQuestions": [
+        "¿Qué ocurrió?",
+        "¿Qué posibilidades o pensamientos aparecieron primero?",
+        "¿Qué reacción emocional tuviste inicialmente y qué tan intensa fue para ti?",
+        "¿Qué hiciste después?",
+        "Si ya habías hecho lo razonablemente posible, ¿el problema siguió ocupando tu mente aunque no hubiera información nueva ni algo adicional que pudieras hacer en ese momento?"
+      ]
+    },
+    "EMOC-H02": {
+      "text": "Piensa en una ocasión reciente en la que otra persona evaluó, criticó o juzgó algo importante que habías hecho. Cuéntanos brevemente:",
+      "subQuestions": [
+        "¿Qué estaba siendo evaluado?",
+        "¿La evaluación fue pública o privada?",
+        "¿Quién realizó la evaluación y qué importancia tenía para ti su opinión?",
+        "¿Cuál fue tu reacción emocional inicial?",
+        "¿Qué hiciste después de esa reacción?"
+      ]
+    },
+    "HONH-H01": {
+      "text": "Piensa en una situación real de los últimos años en la que tuvieras la posibilidad de obtener: una oportunidad, acceso, dinero, una ventaja, reconocimiento, condiciones favorables o un trato especial, y en la que obtenerlo dependiera, al menos parcialmente, de una decisión tuya. No tiene que tratarse de algo ilegal o grave. Cuéntanos brevemente:",
+      "subQuestions": [
+        "¿Qué podías obtener?",
+        "¿De qué dependía conseguirlo?",
+        "¿Había otra persona u organización cuyos intereses también estuvieran involucrados?",
+        "¿Tuviste que decidir qué decir, qué mostrar, qué reclamar, qué aceptar o qué dejar sin aclarar?",
+        "¿Qué hiciste finalmente?",
+        "¿Qué factor tuvo más peso en tu decisión?",
+        "¿Hubo algo que decidiste no hacer aunque pudiera haberte beneficiado?"
+      ]
+    }
+  }
+}

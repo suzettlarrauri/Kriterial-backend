@@ -1,0 +1,30 @@
+{
+  "description": "Etiquetas propuestas por el equipo técnico a partir del texto de los ítems y de la Constitución B1 v2.2. NO aprobadas: pendientes de la metodóloga (decisión D2).",
+  "approved": false,
+  "facets": {
+    "R1": "Auto-estructuración",
+    "R2": "Inicio y continuidad sin supervisión",
+    "R3": "Ambición y estándar personal",
+    "R4": "Vigencia de compromisos",
+    "R5": "Deliberación antes de decidir",
+    "O1": "Profundidad de exploración intelectual",
+    "O2": "Experimentación con métodos",
+    "O3": "Imaginación y generación de posibilidades",
+    "O4": "Sensibilidad estética y a la experiencia",
+    "E1": "Necesidad de contacto e iniciativa social",
+    "E2": "Asertividad",
+    "E3": "Nivel de actividad espontánea",
+    "E4": "Búsqueda de estimulación",
+    "E5": "Entusiasmo y expresión emocional positiva",
+    "A1": "Consideración interpersonal",
+    "A2": "Flexibilidad en el desacuerdo",
+    "A3": "Confianza inicial",
+    "EE1": "Preocupación anticipada",
+    "EE2": "Reactividad ante interrupciones",
+    "EE3": "Sensibilidad a la evaluación",
+    "HH1": "Sinceridad y manejo de impresiones",
+    "HH2": "Justicia en beneficios económicos",
+    "HH3": "Motivación por estatus visible",
+    "HH4": "Aceptación de privilegios por posición"
+  }
+}

@@ -1,0 +1,24 @@
+# dependencias y build
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+# cliente Prisma generado
+src/generated/
+
+# secretos: nunca commitear
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+api-key*.txt
+secrets.php
+
+# logs y SO
+*.log
+.DS_Store
+.idea/
+.vscode/
+.scripts-dist/

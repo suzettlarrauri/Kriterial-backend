@@ -1,0 +1,64 @@
+{
+  "prompts": [
+    {
+      "id": "common.master-context",
+      "version": "1.0",
+      "path": "common/v1.0/master-context.md",
+      "source": "Kriterial_Contexto_Maestro_v1_0.docx, secciones 1–5 (instrucciones comunes para agentes); convertido a Markdown sin cambios de contenido",
+      "sha256": "cc9e284c1ebaf513969de9d74e16b6b361ca03615821880c9fabbcd3e012100a"
+    },
+    {
+      "id": "b1.constitution",
+      "version": "2.2",
+      "path": "b1/v2.2/constitution.md",
+      "source": "Kriterial_B1_Contexto_v2_2_DESCARGA.docx (ADN LÓGICO B1 v2.2). Texto tomado del heredoc ADN y verificado línea a línea contra el docx; corregido 'MAT is excepcional' → 'MAT es excepcional' según el docx",
+      "sha256": "3146e3b7e8f0c54ddebc139f248d225f84daaf7ced621b5c93c8ec99f492e120"
+    },
+    {
+      "id": "b1.pattern-engine",
+      "version": "2.2",
+      "path": "b1/v2.2/pattern-engine.md",
+      "source": "Kriterial_B1_Contexto_v2_2_DESCARGA.docx (módulo AGENTE 1 — PATTERN ENGINE), verificado contra el docx",
+      "sha256": "9d590b53a3561944b5759d8db805cb0b920de8d25ec8679b6e8c036c89c8c3e3"
+    },
+    {
+      "id": "b1.report-writer",
+      "version": "2.2",
+      "path": "b1/v2.2/report-writer.md",
+      "source": "Kriterial_B1_Contexto_v2_2_DESCARGA.docx (módulo AGENTE 2 — REPORT WRITER), verificado contra el docx",
+      "status": "legacy",
+      "note": "Contrato de 18 claves. Será sustituido por b1.report-writer@3.0 (B1_REPORT_DOCUMENT) en F5; se conserva como referencia.",
+      "sha256": "89e29e1ed8c7b3ff972a517cf864bc9b966ad19cc9cf5c820c7c6441a98f40a1"
+    },
+    {
+      "id": "b1.quality-auditor",
+      "version": "2.2",
+      "path": "b1/v2.2/quality-auditor.md",
+      "source": "Kriterial_B1_Contexto_v2_2_DESCARGA.docx (módulo AGENTE 3 — QUALITY AUDITOR), verificado contra el docx",
+      "sha256": "7c43904889d01fa9a228ca492c1dcdfac7f94f1f0c7679ee83554ccb851e75e7"
+    }
+  ],
+  "stages": {
+    "B1.PATTERN": {
+      "prefix": [
+        "common.master-context@1.0",
+        "b1.constitution@2.2"
+      ],
+      "module": "b1.pattern-engine@2.2"
+    },
+    "B1.WRITER": {
+      "prefix": [
+        "common.master-context@1.0",
+        "b1.constitution@2.2"
+      ],
+      "module": "b1.report-writer@2.2"
+    },
+    "B1.AUDIT": {
+      "prefix": [
+        "common.master-context@1.0",
+        "b1.constitution@2.2"
+      ],
+      "module": "b1.quality-auditor@2.2"
+    }
+  }
+}
