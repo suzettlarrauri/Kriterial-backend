@@ -1,5 +1,5 @@
 import { existsSync, readFileSync } from 'node:fs';
-import { describe, expect, it } from 'vitest';
+import { beforeAll, describe, expect, it } from 'vitest';
 import { canonicalJson } from '../common/canonical-json.js';
 import { buildPatternInput } from './build-pattern-input.js';
 import { patternInputSchema, type AnswerSet, type FacetMeta, type QuestionMeta } from './evidence.types.js';
@@ -47,13 +47,16 @@ function loadCase() {
 }
 
 describe.skipIf(!existsSync(FIXTURE))('caso canónico B1 (datos privados)', () => {
-  const { seed, questions, responses } = loadCase();
+  let loaded: ReturnType<typeof loadCase>;
+  beforeAll(() => {
+    loaded = loadCase();
+  });
   const build = () =>
     buildPatternInput({
       instrumentVersion: '0.9',
-      facets: seed.facets,
-      questions,
-      responses,
+      facets: loaded.seed.facets,
+      questions: loaded.questions,
+      responses: loaded.responses,
     });
 
   it('convierte las 56 respuestas en evidencia sin elementos sin mapear ni no respondidos', () => {
